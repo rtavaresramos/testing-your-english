@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { SectionContainer, Container , Row } from '../styleGrid/base';
-import { Col, SectionCol } from '../styleGrid/grid';
-import { QuestionContainer, QuestionCard } from './styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Col } from '../styleGrid/grid';
+import { QuestionContainer, QuestionCard , 
+        QuestionHeader , QuestionOption , 
+        QuestionAswer, AnswerButton} from './styles';
 import '../../teste.css'
 
 export default class Question extends Component {
@@ -33,7 +34,51 @@ export default class Question extends Component {
             </SectionContainer>
             <SectionContainer>
                 <QuestionCard>
+                    <QuestionHeader>
+                        <Container>
+                            <Row>
+                                <Col de='6'>
+                                    <h1> Questão 1</h1>
+                                </Col>
+                                <Col de='6'>
+                                    <div className="questionLevel">
+                                        <h2> 
+                                            <span>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            Difícil    
+                                        </h2>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <p>Sobre a conhecida Idade dos Metais, na transição entre 
+                                    a Pré-História e a História, é possível afirmar que:</p>
+                            </Row>
+                        </Container>
+                    </QuestionHeader>
+                    <QuestionAswer>
+                        <QuestionOption>
+                            <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                        </QuestionOption>
 
+                        <QuestionOption>
+                            <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                        </QuestionOption>
+
+                        <QuestionOption>
+                            <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                        </QuestionOption>
+
+                        <QuestionOption>
+                            <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                        </QuestionOption>
+                        <AnswerButton>
+                            Responda
+                        </AnswerButton>
+                    </QuestionAswer>
                 </QuestionCard>
             </SectionContainer>
         </QuestionContainer>
