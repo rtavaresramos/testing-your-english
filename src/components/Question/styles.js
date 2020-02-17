@@ -131,8 +131,6 @@ export const QuestionOption = styled.button`
 export const AnswerButton = styled.button`
             
             margin:10px 230px;
-            background: #C9CCCF;
-            /* background: #0467DB; */
             width: 149px;
             height: 44px;
             border-radius: 8px;
@@ -140,5 +138,14 @@ export const AnswerButton = styled.button`
             font-family:Avenir, sans-serif;
             font-weight: 500;
             font-size: 16px;
+            background: #C9CCCF;
+
+            /* .enabled{
+            background: #0467DB;
+            }
+
+            .disabled{
+            background: #C9CCCF;
+            } */
 
 `

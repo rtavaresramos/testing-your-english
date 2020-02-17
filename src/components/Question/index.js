@@ -60,25 +60,25 @@ export default class Question extends Component {
                         </Container>
                     </QuestionHeader>
                     <QuestionAswer>
-                        <QuestionOption>
-                            <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
-                        </QuestionOption>
+                            <QuestionOption>
+                                <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                            </QuestionOption>
 
-                        <QuestionOption>
-                            <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
-                        </QuestionOption>
+                            <QuestionOption>
+                                <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                            </QuestionOption>
 
-                        <QuestionOption>
-                            <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
-                        </QuestionOption>
+                            <QuestionOption>
+                                <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                            </QuestionOption>
 
-                        <QuestionOption>
-                            <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
-                        </QuestionOption>
-                        <AnswerButton>
-                            Responda
-                        </AnswerButton>
-                    </QuestionAswer>
+                            <QuestionOption>
+                                <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                            </QuestionOption>
+                            <AnswerButton>
+                                Responda
+                            </AnswerButton>
+                        </QuestionAswer>
                 </QuestionCard>
             </SectionContainer>
         </QuestionContainer>
