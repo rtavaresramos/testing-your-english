@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-
-import {Nav, NavBrand} from './styles.js'
+import { Div , NavBrand } from './styles';
+import { Row } from '../styleGrid/base';
 
 export default class NavBar extends Component {
   render() {
-    return <div>
-        <nav>
-            <Nav>
-                <NavBrand>Teste Dev Frontend</NavBrand>
-            </Nav>
-        </nav>
-    </div>;
+    return (
+            <Div>
+                <Row>
+                    <NavBrand>Teste Dev Frontend</NavBrand>
+                </Row>
+            </Div>
+    )
   }
 }

@@ -1,31 +1,21 @@
-
 import styled from 'styled-components';
 
-export const Nav = styled.div`
-  
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    height:10%;
-    background: #343C58;
+export const Div = styled.div`
 
-    h1{
+    padding: 10px 10px 20px 8px;
+    margin: -10px 10px 0 -10px;
+    height: 30px;
+    width: 100%;
+    background:#343C58;
+    overflow-x: hidden;
+
+`
+
+export const NavBrand = styled.div `
+
+        font-family: Roboto, sans-serif;
+        margin: 10px 10px;
         color: #fff;
-    }
-`;
-export const NavBrand = styled.div`
-  
-    position: absolute;
-    width: 20%;
-    height: 24px;
-    left: 26px;
-    top: 16px;
-    color: #fff;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-`;
+
+
+`
