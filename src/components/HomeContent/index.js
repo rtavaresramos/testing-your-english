@@ -14,6 +14,7 @@ import '../../teste.css'
             const response = await fetch('https://api.myjson.com/bins/1b9kgc')
             const data  = await response.json()
             setQuestions(data)
+
          }
         loadQuestions()
      }, [])
@@ -23,8 +24,6 @@ import '../../teste.css'
          question.category
      ))
      const uniqueCategory = Array.from(new Set(a));
-
-    console.log(uniqueCategory)
      
     return (
         <HomeContainer>
@@ -41,15 +40,15 @@ import '../../teste.css'
                 <SectionContainer>
                     <CardSection>
                         <Row>
-                        {questions.map(function(question){
+                            {questions.map(function(question){
                             
-                        
-                    return (<Col key={}de='3'>
-                                <CardButton>
-                                    <h1>{uniqueCategory[]}</h1>
-                                </CardButton>
-                            </Col>)
+                    return
                             })}
+                            <Col de='3'>
+                                <CardButton>
+                                    <h1>historia</h1>
+                                </CardButton>
+                            </Col>
                         </Row>
                     </CardSection>
                 </SectionContainer>
