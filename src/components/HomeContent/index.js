@@ -18,26 +18,6 @@ import '../../teste.css'
         loadQuestions()
      }, [])
 
-    //  useEffect(() => {
-    //     function removeDuplicatedCategory(){
-    //         const newCategory = questions.map( question =>{
-    //             const uniqueCategory = question.category.
-    //             filter((elem, index, arr) => arr.indexOf((elem)===index))
-    //             return uniqueCategory
-    //         })
-    //         setCategory(newCategory)
-    //     }
-    //     removeDuplicatedCategory()
-    //     console.log(category)
-    //  }, [])
-    
-        // questions.map( question =>{
-        //     const newCategory = 
-        //     const uniqueCategory = question.category.
-        //     filter((elem, index, arr) => arr.indexOf((elem)===index))
-
-        //     setCategory(uniqueCategory)
-        // })
  
      const a = questions.map(question => (
          question.category
@@ -62,9 +42,8 @@ import '../../teste.css'
                     <CardSection>
                         <Row>
                         {questions.map(function(question){
-                            function(){
-                                let <i></i>
-                            }
+                            
+                        
                     return (<Col key={}de='3'>
                                 <CardButton>
                                     <h1>{uniqueCategory[]}</h1>
