@@ -17,7 +17,7 @@ export default class FinalResult extends Component {
                         <FinalResultCard>
                             <Header>
                                 <Row>
-                                    <img src={MonsterIcon}/>
+                                    <img src={MonsterIcon} alt=""/>
                                     <h1>Parabéns!</h1>
                                     <h2>Você finalizou o teste</h2>
                                 </Row>

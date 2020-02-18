@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
-    
+    .hide{
+        display:none;
+    }
 
     h1{
         margin:50px 15px;
@@ -34,7 +36,7 @@ export const CardButton = styled.button`
             height: auto;
             padding: 0 0;
             text-align: start;
-            margin: 50px 0 5px 0;
+            margin: 50px 0 5px 5px;
             font-size: 2em;
         }
 

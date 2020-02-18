@@ -11,10 +11,10 @@ export default class App extends Component {
   render() {
     return <div>
         <NavBar/>
-        {/* <HomeContent/> */}
+        <HomeContent/>
         {/* <Question/> */}
         {/* <ModalResult/> */}
-        <FinalResult/>
+        {/* <FinalResult/> */}
     </div>
   }
 }
