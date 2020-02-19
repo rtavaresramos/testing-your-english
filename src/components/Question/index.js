@@ -1,41 +1,59 @@
-import React from 'react';
+import React, {useState , useEffect} from 'react';
 import { SectionContainer, Container , Row } from '../styleGrid/base';
 import { Col } from '../styleGrid/grid';
 import { QuestionContainer, QuestionCard , 
         QuestionHeader , QuestionOption , 
         QuestionAswer, AnswerButton} from './styles';
-// import {categoryQuestion} from '../HomeContent'
+import api from '../../services/api'
+import {useParams} from 'react-router-dom'
+
 
 function Question(){
+    const[question, setQuestion] = useState([])
+    const { category } = useParams()
 
-    // const [question, setQuestion] = useState([])
+    useEffect(() => {
+        async function loadQuestions() {
+            const response = await api.get()
+            const data = await response.data
+            let questionsInfos = [];
 
-    // useEffect(() => {
-    //     async function loadQuestions() {
-    //         const response = await fetch('https://api.myjson.com/bins/1b9kgc');
-    //         const data  = await response.json();
+            data.forEach( question => {
+                if (  question.category == category ) { questionsInfos.push(question.id, 
+                    question.category, question.dificulty,
+                    question.correct_answer, 
+                    question.incorrect_answer) 
+                    
+                    console.log(question.id, 
+                        question.category, question.dificulty,
+                        question.correct_answer, 
+                        question.incorrect_answer) }
+            } );
 
-    //         let questions = []
+            setQuestion(data);
+        }
+        loadQuestions()
+     }, [setQuestion])
 
-    //         data.forEach( question => {
-    //             // if ( categoryQuestion.includes(question.category) ) { questions.push(question.category) }
-    //         } );
-    //         setQuestion(questions)
-    //     }
-    //     loadQuestions()
-    //  }, [])
+     question.map(question => question.id, 
+        question.category, question.dificulty,
+        question.correct_answer, 
+        question.incorrect_answer)
 
+    //   let i = 0
+    //   function changeQuestion(i){
+    //     i = i++
+    //     return i
+    //   }  
     return (<div>
 
-        <QuestionContainer className="hide">
+        <QuestionContainer>
             <SectionContainer>
                 <Row>
                     <Col de='12'>
                         <Row>
                             <Col de='6' className="start">
-                                <h1>
-                                    História
-                                </h1>
+                                <h1>{category}</h1>
                             </Col>
                             <Col de='6' className="end"> 
                                 <a href="/">
@@ -55,7 +73,7 @@ function Question(){
                         <Container>
                             <Row>
                                 <Col de='6'>
-                                    <h1> Questão 1</h1>
+                                    {/* <h1> {`Questão ${question.id[i]}`}</h1> */}
                                 </Col>
                                 <Col de='6'>
                                     <div className="questionLevel">
@@ -65,7 +83,7 @@ function Question(){
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                             </span>
-                                            Difícil    
+                                            {/* {question.dificulty[i]}   */}
                                         </h2>
                                     </div>
                                 </Col>

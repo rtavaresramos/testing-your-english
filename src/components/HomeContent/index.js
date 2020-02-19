@@ -10,7 +10,7 @@ import api from '../../services/api'
 
     const [questions, setQuestions] = useState([]);
     const [categories, setCategories] = useState([]);
-    // let categoryQuestion = []
+    
     useEffect(() => {
         async function loadQuestions() {
             const response = await api.get()
@@ -46,10 +46,10 @@ import api from '../../services/api'
                     <CardSection>
                         <Row>
                             { categories.map( ( category, cat ) => (
-                                <Link to="/test">
+                                <Link to={`/test/${category}`}>
                                 <Col id={category} key={ cat }
                                  de='3' >
-                                    <CardButton onClick={"/test"}>
+                                    <CardButton>
                                         <h1>{ category }</h1>
                                     </CardButton>
                                 </Col>
