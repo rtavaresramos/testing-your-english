@@ -16,35 +16,24 @@ function Question(){
         async function loadQuestions() {
             const response = await api.get()
             const data = await response.data
-            let questionsInfos = [];
 
-            data.forEach( question => {
-                if (  question.category == category ) { questionsInfos.push(question.id, 
-                    question.category, question.dificulty,
-                    question.correct_answer, 
-                    question.incorrect_answer) 
-                    
-                    console.log(question.id, 
-                        question.category, question.dificulty,
-                        question.correct_answer, 
-                        question.incorrect_answer) }
-            } );
+            let categoryQuestions = data.filter((question) => {
+                return question.category === category
+              })
 
-            setQuestion(data);
+            setQuestion(categoryQuestions);
         }
         loadQuestions()
      }, [setQuestion])
 
-     question.map(question => question.id, 
-        question.category, question.dificulty,
-        question.correct_answer, 
-        question.incorrect_answer)
+     question.map(question => 
+        console.log(question))
 
-    //   let i = 0
-    //   function changeQuestion(i){
-    //     i = i++
-    //     return i
-    //   }  
+    // function activeButton(){
+    //     let e = document.getElementById('#button')
+    //     e.addClassName('enabled')
+    // }
+    
     return (<div>
 
         <QuestionContainer>
@@ -69,51 +58,68 @@ function Question(){
             </SectionContainer>
             <SectionContainer>
                 <QuestionCard>
+                                {question.map(question=> 
+                                <>
                     <QuestionHeader>
                         <Container>
                             <Row>
+
                                 <Col de='6'>
-                                    {/* <h1> {`Questão ${question.id[i]}`}</h1> */}
+                                    <h1> {`Questão ${question.id}`}</h1>
                                 </Col>
                                 <Col de='6'>
                                     <div className="questionLevel">
                                         <h2> 
                                             <span>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                {/* {()=>{
+                                                const level = ""
+                                                if(question.difficulty == "easy"){
+                                                    level = '<i class="fas fa-star">'
+                                                }else{
+                                                    if(question.difficulty == "medium"){
+                                                        level = '<><i class="fas fa-star"></i><i class="fas fa-star"></>'
+                                                    }else{
+                                                        if(question.difficulty == "hard"){
+                                                            level = '<><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'
+                                                        }
+                                                }
+                                                }
+                                                return level
+                                                }} */}
                                             </span>
-                                            {/* {question.dificulty[i]}   */}
+                                            {question.difficulty}  
                                         </h2>
                                     </div>
                                 </Col>
                             </Row>
                             <Row>
-                                <p>Sobre a conhecida Idade dos Metais, na transição entre 
-                                    a Pré-História e a História, é possível afirmar que:</p>
+                                <p>{question.question}</p>
                             </Row>
                         </Container>
                     </QuestionHeader>
                     <QuestionAswer>
                             <QuestionOption>
-                                <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                                <p>{question.correct_answer}</p>
                             </QuestionOption>
 
                             <QuestionOption>
-                                <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                                <p>{question.incorrect_answers[0]}</p>
                             </QuestionOption>
 
                             <QuestionOption>
-                                <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                                <p>{question.incorrect_answers[1]}</p>
                             </QuestionOption>
 
                             <QuestionOption>
-                                <p>não existe ligação entre o uso dos metais e a formação de grandes impérios</p>
+                                <p>{question.incorrect_answers[2]}</p>
                             </QuestionOption>
-                            <AnswerButton>
+                            <AnswerButton id='button'>
                                 Responda
                             </AnswerButton>
                         </QuestionAswer>
+                                 </>   
+                                    )}
+                                
                 </QuestionCard>
             </SectionContainer>
         </QuestionContainer>

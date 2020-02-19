@@ -142,12 +142,9 @@ export const AnswerButton = styled.button`
             font-size: 16px;
             background: #C9CCCF;
 
-            /* .enabled{
+            .enabled{
             background: #0467DB;
             }
 
-            .disabled{
-            background: #C9CCCF;
-            } */
-
+            
 `
