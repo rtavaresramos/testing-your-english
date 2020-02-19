@@ -10,7 +10,7 @@ import { FinalResultContainer , FinalResultCard, Header ,
 export default class FinalResult extends Component {
   render() {
     return (<div>
-        <FinalResultContainer>
+        <FinalResultContainer className="hide">
             <Container>
                 <SectionContainer>
                     <Row>

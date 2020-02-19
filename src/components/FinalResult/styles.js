@@ -5,6 +5,10 @@ export const FinalResultContainer = styled.div`
             width:auto;
             height:100%;
             padding: 20px 20%;
+        .hide{
+                display:none;
+            }
+
 `
 export const FinalResultCard = styled.div`
 

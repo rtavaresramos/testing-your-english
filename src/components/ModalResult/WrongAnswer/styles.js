@@ -11,7 +11,9 @@ export const ModalContainer = styled.div`
         width: 100%;
         overflow: auto;
         background: rgba(30, 33, 36, .5);
-
+        .hide{
+            display:none;
+        }
 `;
 
 export const ModalContent = styled.div `

@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import { SectionContainer, Container , Row } from '../styleGrid/base';
 import { Col } from '../styleGrid/grid';
 import { HomeContainer, CardButton , CardSection } from './styles';
-import '../../teste.css'
+import api from '../../services/api'
+
 
  function HomeContent() {
 
     const [questions, setQuestions] = useState([]);
     const [categories, setCategories] = useState([]);
-
+    // let categoryQuestion = []
     useEffect(() => {
         async function loadQuestions() {
-            const response = await fetch('https://api.myjson.com/bins/1b9kgc');
-            const data  = await response.json();
-
+            const response = await api.get()
+            const data = await response.data
             let categories = [];
 
             data.forEach( question => {
@@ -45,11 +46,14 @@ import '../../teste.css'
                     <CardSection>
                         <Row>
                             { categories.map( ( category, cat ) => (
-                                <Col id={category} key={ cat } de='3'>
-                                    <CardButton>
+                                <Link to="/test">
+                                <Col id={category} key={ cat }
+                                 de='3' >
+                                    <CardButton onClick={"/test"}>
                                         <h1>{ category }</h1>
                                     </CardButton>
                                 </Col>
+                                </Link>
                             ) )}
                         </Row>
                     </CardSection>

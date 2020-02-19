@@ -1,33 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { SectionContainer, Container , Row } from '../styleGrid/base';
 import { Col } from '../styleGrid/grid';
 import { QuestionContainer, QuestionCard , 
         QuestionHeader , QuestionOption , 
         QuestionAswer, AnswerButton} from './styles';
-import '../../teste.css'
+// import {categoryQuestion} from '../HomeContent'
 
 function Question(){
 
-    const [question, setQuestion] = useState([])
+    // const [question, setQuestion] = useState([])
 
-    useEffect(() => {
-        async function loadQuestions() {
-            const response = await fetch('https://api.myjson.com/bins/1b9kgc');
-            const data  = await response.json();
+    // useEffect(() => {
+    //     async function loadQuestions() {
+    //         const response = await fetch('https://api.myjson.com/bins/1b9kgc');
+    //         const data  = await response.json();
 
-            let categories = [];
+    //         let questions = []
 
-            data.forEach( question => {
-                if ( !categories.includes(question.category) ) { categories.push(question.category) }
-            } );
-
-        }
-        loadQuestions()
-     }, [])
+    //         data.forEach( question => {
+    //             // if ( categoryQuestion.includes(question.category) ) { questions.push(question.category) }
+    //         } );
+    //         setQuestion(questions)
+    //     }
+    //     loadQuestions()
+    //  }, [])
 
     return (<div>
 
-        <QuestionContainer>
+        <QuestionContainer className="hide">
             <SectionContainer>
                 <Row>
                     <Col de='12'>
@@ -38,7 +38,7 @@ function Question(){
                                 </h1>
                             </Col>
                             <Col de='6' className="end"> 
-                                <a href="#">
+                                <a href="/">
                                     <span>
                                     <i className="far fa-times-circle"></i>
                                     </span>

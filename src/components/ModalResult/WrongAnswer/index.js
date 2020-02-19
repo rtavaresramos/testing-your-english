@@ -6,7 +6,7 @@ export default class ModalResult extends Component {
   render() {
     return (<div>
         <ModalContainer>
-            <ModalContent >
+            <ModalContent className="hide">
                 <div className="wrongAnswer">
                     <span >
                         <i class="fas fa-times-circle"></i>

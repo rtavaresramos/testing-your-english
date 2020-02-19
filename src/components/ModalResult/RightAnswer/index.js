@@ -5,7 +5,7 @@ import { ModalContainer, ModalContent, ModalButton } from './styles';
 export default class ModalResult extends Component {
   render() {
     return (<div>
-        <ModalContainer>
+        <ModalContainer >
             <ModalContent >
                 <div className="rightAnswer">
                     <span >

@@ -6,7 +6,9 @@ export const QuestionContainer = styled.div`
             padding: 20px 20%;
 
             
-
+            .hide{
+                display:none;
+            }
             h1{
             font-size: 1.2em;
             font-weight:500;
