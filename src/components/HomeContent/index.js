@@ -4,27 +4,31 @@ import { Col } from '../styleGrid/grid';
 import { HomeContainer, CardButton , CardSection } from './styles';
 import '../../teste.css'
 
- function HomeContent(){
+ function HomeContent() {
 
-    const [questions, setQuestions] = useState([])
-    const [category, setCategory] = useState([])
+    const [questions, setQuestions] = useState([]);
+    const [categories, setCategories] = useState([]);
 
-     useEffect(() => {
-         async function loadQuestions(){
-            const response = await fetch('https://api.myjson.com/bins/1b9kgc')
-            const data  = await response.json()
-            setQuestions(data)
+    useEffect(() => {
+        async function loadQuestions() {
+            const response = await fetch('https://api.myjson.com/bins/1b9kgc');
+            const data  = await response.json();
 
-         }
+            let categories = [];
+
+            data.forEach( question => {
+                if ( !categories.includes(question.category) ) { categories.push(question.category) }
+            } );
+
+            setCategories(categories);
+            setQuestions(data);
+        }
         loadQuestions()
-     }, [])
+     }, [
+        setQuestions,
+        setCategories
+     ])
 
- 
-     const a = questions.map(question => (
-         question.category
-     ))
-     const uniqueCategory = Array.from(new Set(a));
-     
     return (
         <HomeContainer>
             <Container>
@@ -40,15 +44,13 @@ import '../../teste.css'
                 <SectionContainer>
                     <CardSection>
                         <Row>
-                            {questions.map(function(question){
-                            
-                    return
-                            })}
-                            <Col de='3'>
-                                <CardButton>
-                                    <h1>historia</h1>
-                                </CardButton>
-                            </Col>
+                            { categories.map( ( category, cat ) => (
+                                <Col id={category} key={ cat } de='3'>
+                                    <CardButton>
+                                        <h1>{ category }</h1>
+                                    </CardButton>
+                                </Col>
+                            ) )}
                         </Row>
                     </CardSection>
                 </SectionContainer>

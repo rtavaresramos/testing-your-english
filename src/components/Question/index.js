@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SectionContainer, Container , Row } from '../styleGrid/base';
 import { Col } from '../styleGrid/grid';
 import { QuestionContainer, QuestionCard , 
@@ -6,8 +6,25 @@ import { QuestionContainer, QuestionCard ,
         QuestionAswer, AnswerButton} from './styles';
 import '../../teste.css'
 
-export default class Question extends Component {
-  render() {
+function Question(){
+
+    const [question, setQuestion] = useState([])
+
+    useEffect(() => {
+        async function loadQuestions() {
+            const response = await fetch('https://api.myjson.com/bins/1b9kgc');
+            const data  = await response.json();
+
+            let categories = [];
+
+            data.forEach( question => {
+                if ( !categories.includes(question.category) ) { categories.push(question.category) }
+            } );
+
+        }
+        loadQuestions()
+     }, [])
+
     return (<div>
 
         <QuestionContainer>
@@ -85,4 +102,5 @@ export default class Question extends Component {
 
     </div>)
   }
-}
+
+export default Question
