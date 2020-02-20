@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 import { ModalContainer, ModalContent, ModalButton } from './styles';
+import Question from '../../Question';
 
 export default class ModalResult extends Component {
   render() {
     return (<div>
+        <Question/>
         <ModalContainer>
             <ModalContent className="hide">
                 <div className="wrongAnswer">

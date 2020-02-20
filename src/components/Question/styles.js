@@ -79,6 +79,8 @@ export const QuestionHeader = styled.header`
             font-size: .6em;
             font-weight:500;
             font-family:Roboto, sans-serif;
+            text-transform: capitalize
+
         }
         h2, span{
             color:#343C58;

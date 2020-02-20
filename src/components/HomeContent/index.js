@@ -1,32 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
-import { SectionContainer, Container , Row } from '../styleGrid/base';
+import { SectionContainer, Container , Row } from '../styleGrid/base'
 import { Col } from '../styleGrid/grid';
-import { HomeContainer, CardButton , CardSection } from './styles';
+import { HomeContainer, CardButton , CardSection } from './styles'
 import api from '../../services/api'
 
 
  function HomeContent() {
 
-    const [questions, setQuestions] = useState([]);
-    const [categories, setCategories] = useState([]);
-    
+    const [categories, setCategories] = useState([])
     useEffect(() => {
-        async function loadQuestions() {
+        async function loadCategories() {
             const response = await api.get()
             const data = await response.data
-            let categories = [];
+            let categories = []
 
             data.forEach( question => {
                 if ( !categories.includes(question.category) ) { categories.push(question.category) }
-            } );
+            } )
 
-            setCategories(categories);
-            setQuestions(data);
+            setCategories(categories)
         }
-        loadQuestions()
+        loadCategories()
      }, [
-        setQuestions,
         setCategories
      ])
 

@@ -1,13 +1,11 @@
-import React from 'react';
-import Question from '../components/Question';
-import ModalResult from '../components/ModalResult/RightAnswer'
+import React from 'react'
+import Question from '../components/Question'
 
 
 export const Test = () =>{
  
     return <>
         <Question/>
-        <ModalResult/>
     </>
   
 }
