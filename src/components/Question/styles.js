@@ -6,9 +6,6 @@ export const QuestionContainer = styled.div`
             padding: 20px 20%;
 
             
-            .hide{
-                display:none;
-            }
             h1{
             font-size: 1.2em;
             font-weight:500;
@@ -43,6 +40,7 @@ export const QuestionContainer = styled.div`
             .end{
                 text-align: end;
             }
+            
 `
 export const QuestionCard = styled.div`
 
@@ -142,11 +140,12 @@ export const AnswerButton = styled.button`
             font-family:Avenir, sans-serif;
             font-weight: 500;
             font-size: 16px;
-            background: #C9CCCF;
+            /* background: #C9CCCF; */
+            background: #0467DB;
+
+            
 
             .enabled{
             background: #0467DB;
             }
-
-            
 `
