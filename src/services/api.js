@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const api = axios.create({
 
-     baseURL: 'https://api.myjson.com/bins/1b9kgc'
+     baseURL: process.env.REACT_APP_API_URL
 
 })
 
