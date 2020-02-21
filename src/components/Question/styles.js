@@ -5,7 +5,13 @@ export const QuestionContainer = styled.div`
             height:100%;
             padding: 20px 20%;
 
-            
+            .hide{
+                display: none;
+            }
+
+            .show{
+                display:block;
+            }
             h1{
             font-size: 1.2em;
             font-weight:500;
@@ -86,8 +92,8 @@ export const QuestionHeader = styled.header`
         span{
             position:absolute;
             font-size:.2em;
-            align-items: center;
-            right: 45px;
+            text-align: center;
+            right: 50px;
             top: 5px;
         }
         p{
@@ -99,11 +105,21 @@ export const QuestionHeader = styled.header`
         
 
 `
-export const QuestionAswer = styled.div`
+export const QuestionAnswer = styled.div`
 
             padding: 0 0 10px 50px;
             height: 375px;
             width: auto;
+
+            .enabled{
+            background: #0467DB;
+            pointer-events: auto;
+            
+            }
+            .disabled{
+            pointer-events:none;
+            background: #C9CCCF;
+            }
 
 `
 export const QuestionOption = styled.button`
@@ -140,12 +156,83 @@ export const AnswerButton = styled.button`
             font-family:Avenir, sans-serif;
             font-weight: 500;
             font-size: 16px;
-            /* background: #C9CCCF; */
-            background: #0467DB;
+            outline:none;
 
-            
 
-            .enabled{
-            background: #0467DB;
+`
+
+export const ModalContainer = styled.div`
+
+
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        background: rgba(30, 33, 36, .5);
+
+`
+
+export const ModalContent = styled.div `
+        .right{
+            color:#32CB82;
+        }
+
+        .wrong{
+            color: #FF4F4F;
+        }
+        position: absolute;
+        left: 35%;
+        top: 30%;
+        height: 228px;
+        width: 328px;
+        background: #fff;
+        border: ${ props =>`3px solid ${props.borderColor}`};
+        box-sizing: border-box;
+        box-shadow: 0px 3px 6px rgba(52, 60, 88, 0.4);
+        border-radius: 8px;
+        padding-top:20px;
+        /* #FF4F4F */
+        h1{
+
+        margin:0 0 0 0;
+        font-size: 2em;
+        font-weight:500;
+        font-family:Roboto, sans-serif;
+        width:100%;
+        text-align:center;
+        color: #343C58;
+
+        }
+
+            span{
+            margin: 0 130px;
+            height:300px;
+            width:300px;
+            font-size: 4em;
             }
+
+        
+        
+`
+export const ModalButton = styled.button `
+
+            margin:20px 90px;
+            width: 149px;
+            height: 44px;
+            border-radius: 8px;
+            color:#fff;
+            font-family:Avenir, sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            background: #0467DB;
+            border: none;
+            outline: none;
+
+            i{
+                margin:0 10px;
+            }
+
 `

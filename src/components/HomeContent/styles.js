@@ -23,7 +23,7 @@ export const CardButton = styled.button`
         width: 239px;
         height: 104px;
         background: #FFFFFF;
-    /* Box Border */
+
 
         border: 1px solid #E4E4E6;
         box-sizing: border-box;
@@ -40,6 +40,22 @@ export const CardButton = styled.button`
             font-size: 2em;
         }
 
+        /* // Extra small devices (portrait phones, less than 576px) */
+    @media screen and (max-width: 575.98px){ 
+        margin:10px 20px;
+        width: 239px;
+        height: 104px;
+
+        h1{
+            width: 220px;
+            height: auto;
+            padding: 0 0;
+            text-align: start;
+            margin: 50px 0 5px 5px;
+            font-size: 2em;
+        }
+
+    }
 `
 export const CardSection = styled.div`
 
