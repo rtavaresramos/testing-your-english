@@ -5,9 +5,25 @@ export const FinalResultContainer = styled.div`
             width:auto;
             height:100%;
             padding: 20px 20%;
+            overflow-x: hidden;
         .hide{
                 display:none;
             }
+        @media (max-device-width: 479.98px){ 
+            padding: 5px 0;
+            margin: 0 0;
+            
+        }
+        
+        @media screen and (max-width: 575.98px){ 
+            padding: 20px 0;
+
+        }
+        @media (min-width: 575.98px) and (max-width: 879.98px){ 
+            padding: 20px 0;
+
+        }
+
 
 `
 export const FinalResultCard = styled.div`
@@ -47,6 +63,10 @@ export const FinalResultCard = styled.div`
         .resultDescription1 p{
             font-size:.7em;
         }
+        .resultDescription2 {
+            display:flex;
+            flex-direction: row;
+        }
         .resultDescription2 h2{
             font-family: Avenir, sans-serif;
             font-weight:500;
@@ -70,6 +90,157 @@ export const FinalResultCard = styled.div`
             margin: 0 10px 0 30px;
             height: 50px;
             border-left: 1px solid #B8BED5;
+        }
+        @media  (max-width: 400px){ 
+            height: 720px;
+            padding: 0 ;
+
+        .resultDescription1{
+        width: 75%;
+        margin: 20% 5% 10px 15%;
+
+        }
+
+        .resultDescription2 {
+            display:flex;
+            flex-direction: column;
+        }
+
+        .resultDescription2 h2, .resultP{
+
+            width: 300px;
+        }
+        .divisor{
+            margin:15px 0;
+            margin-left: -5px;
+            width:100px;
+            border-left: none;
+            }
+        }
+
+        @media (min-width: 374px) and (max-device-width: 479.98px){ 
+        
+        height: 720px;
+        padding: 0 ;
+
+        .resultDescription1{
+        width: 75%;
+        margin: 20% 5% 10px 15%;
+
+        }
+
+        .resultDescription2 {
+            display:flex;
+            flex-direction: column;
+            padding-left: 15%;
+
+        }
+
+        .resultDescription2 h2, .resultP{
+
+            width: 300px;
+        }
+        .divisor{
+            margin:15px 0;
+            margin-left: -5px;
+            width:100px;
+            border-left: none;
+            }
+        }
+
+
+
+        @media (min-width: 478px) and (max-width: 575.98px){ 
+            height: 739px;
+
+        
+
+        .resultDescription1{
+            width: 45%;
+            margin: 10% 27%;
+            }
+
+        .resultDescription2 {
+            width: 100%;
+            display:flex;
+            flex-direction: column;
+            text-align:center;
+            padding-left: 23%;
+        }
+
+        .resultDescription2 h2, .resultP{
+
+            width: 300px;
+        }
+
+        .divisor{
+            margin-top:15px;
+            margin-left:-55px;
+            width:100px;
+            border-bottom: 1px solid #B8BED5;
+            border-left: none;
+            
+            }
+        }
+        @media (min-width: 576px) and (max-width: 740px){ 
+        overflow-x: hidden;
+        height: 600px;
+        
+
+        .resultDescription1{
+            width: 45%;
+            margin: 10% 27%;
+            }
+
+        .resultDescription2 {
+            width: 100%;
+            display:flex;
+            flex-direction: row;
+            text-align:center;
+            margin-left: -5%;
+        }
+
+        .resultDescription2 h2, .resultP{
+
+            width: 300px;
+        }
+
+        .divisor{
+            border-left: 1px solid #B8BED5;
+            margin: 0 55px;
+            
+            }
+        }
+
+        @media (min-width:880px) and (max-width: 1079.98px){
+        
+        height: 600px;
+        
+
+        .resultDescription1{
+            width: 45%;
+            margin: 10% 27%;
+            }
+
+        .resultDescription2 {
+            width: 100%;
+            display:flex;
+            flex-direction: row;
+            text-align:center;
+            margin-left: -7%;
+
+
+        }
+
+        .resultDescription2 h2, .resultP{
+
+            width: 300px;
+        }
+
+        .divisor{
+            border-left: 1px solid #B8BED5;
+            margin: 0 55px;
+            }
         }
 `
 export const Header = styled.div`
@@ -109,13 +280,56 @@ export const Header = styled.div`
             width:100%;
 
         }
+
+        @media (max-device-width: 479.98px){ 
+            h1{ 
+                top:15%;
+                left:37%;
+                font-size: 2em; 
+            }
+
+            h2{
+                top:40%;
+                left:32%;
+                font-size: 1em;
+            }
+            img{
+            margin: 30px 0;
+            width:40%;
+            height: auto;
+            }
+        }
+
+        @media (min-width: 478px) and (max-width: 575.98px){ 
+            img{
+            margin: 10px 10px;
+            width:40%;
+            height: auto;
+            }
+        }
+        @media (min-width: 576px) and (max-width: 740px){ 
+            img{
+            margin: 30px 40px;
+            width:30%;
+            height: auto;
+            }
+        }
+
+
+
+        @media (min-width:880px) and (max-width: 1079.98px){
+            img{
+            margin: 30px 40px;
+            width:30%;
+            height: auto;
+            }
+        }
         
 `
 export const InfoHeader = styled.div`
 
         position:absolute;
         margin: 7px 0;
-        width: 92%;
         background: #FFFFFF;
         outline: none;
         width: 40%;
@@ -143,6 +357,28 @@ export const InfoHeader = styled.div`
             text-align: center;
             color: #343C58;
         }
+
+        @media (max-device-width: 479.98px){ 
+            width: 85%;
+            height:55px;
+            left: 10%;
+            }
+
+        @media (min-width: 478) and (max-width: 575.98px){ 
+        width: 65%;
+        left: 17%;
+        }
+        @media (min-width: 576px) and (max-width: 740px){ 
+            left: 17%;
+            width: 65%;
+
+        }
+        @media (min-width:880px) and (max-width: 1179.98px){
+            left: 17%;
+            width: 65%;
+        }
+       
+
 `
 export const ResultButton = styled.button`
 
@@ -157,5 +393,29 @@ export const ResultButton = styled.button`
             background: #0467DB;
             outline:none;
             text-align: center;
+
+            @media (max-device-width: 479.98px){ 
+            margin:30px 10%;
+            width: 80%;
+            }
+
+            @media screen and (max-width: 575.98px){
+            margin:30px 10%;
+            width: 80%;
+             }
+
+             @media (min-width: 576px) and (max-width: 740px){ 
+            margin:30px 10%;
+            width: 80%;
+
+        }
+
+            @media (min-width:880px) and (max-width: 1079.98px){
+            margin:30px 10%;
+            width: 80%;
+
+
+             }
+
 
 `

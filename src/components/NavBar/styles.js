@@ -8,6 +8,7 @@ export const Div = styled.div`
     width: 100%;
     background:#343C58;
     overflow-x: hidden;
+    overflow-y: hidden;
 
 `
 

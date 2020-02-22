@@ -47,6 +47,23 @@ export const QuestionContainer = styled.div`
                 text-align: end;
             }
             
+            @media screen and (max-width: 575.98px){
+                padding: 20px 0;
+             }
+             @media screen and (max-width: 767.98px){
+                padding: 20px 0;
+             }
+
+             @media screen and (max-width: 1119.98px){ 
+                padding: 20px 10%;
+             }
+
+             @media (max-device-width: 479.98px){ 
+                padding: 20px 0;
+                margin-left: 0;
+             }
+
+
 `
 export const QuestionCard = styled.div`
 
@@ -56,6 +73,14 @@ export const QuestionCard = styled.div`
         background: #FFFFFF;
         box-shadow: 0px 1px 4px rgba(52, 60, 88, 0.4);
         border-radius: 8px;
+        
+        @media (max-device-width: 479.98px){ 
+                
+                padding-right: 10px;
+                padding-bottom: 15px;
+                margin-left: -5px;
+             }
+
 `
 export const QuestionHeader = styled.header`
 
@@ -74,6 +99,11 @@ export const QuestionHeader = styled.header`
             background: rgba(52,60,88, .2);
             border-radius: 14px;
             margin-right: 30px;
+        }
+        @media (max-device-width: 479.98px){ 
+            .questionLevel{
+            margin-right: 0;
+        }
         }
         h2{
             width:80%;
@@ -102,6 +132,11 @@ export const QuestionHeader = styled.header`
             font-weight: 400;
 
         }
+        @media (max-device-width: 479.98px){ 
+
+margin-left: -10px;
+}
+
         
 
 `
@@ -145,6 +180,14 @@ export const QuestionOption = styled.button`
 
         }
 
+        @media (max-device-width: 479.98px){ 
+
+            margin-left: -12px;
+            width:100%;
+        }
+
+
+
 `
 export const AnswerButton = styled.button`
             
@@ -158,6 +201,41 @@ export const AnswerButton = styled.button`
             font-size: 16px;
             outline:none;
 
+            
+
+
+
+            @media (max-width: 575.98px){
+               
+            AnswerButton{
+                margin:10px 0;
+                width: 92%;
+                height: 34px;
+            }
+             }
+
+             @media (min-width: 576px) and (max-width: 767.98px){
+                AnswerButton{
+                margin:10px 0;
+                width: 92%;
+                height: 34px;
+            }
+
+             }
+             @media (min-width: 768px) and (max-width: 1119.98px){ 
+                AnswerButton{
+                margin:10px 0;
+                width: 92%;
+                height: 34px;
+                }
+             }
+             @media (min-width: 1120px) and (max-width: 1219.98px){ 
+                AnswerButton{
+                margin:10px 200px;
+                width: 149px;
+                height: 44px;
+                }
+             }
 
 `
 
@@ -183,6 +261,9 @@ export const ModalContent = styled.div `
         .wrong{
             color: #FF4F4F;
         }
+        .end{
+            color:#438DE4;
+        }
         position: absolute;
         left: 35%;
         top: 30%;
@@ -194,7 +275,18 @@ export const ModalContent = styled.div `
         box-shadow: 0px 3px 6px rgba(52, 60, 88, 0.4);
         border-radius: 8px;
         padding-top:20px;
-        /* #FF4F4F */
+
+
+        @media  (max-width: 575.98px){
+        left: 13%;
+        }
+
+        @media  (min-width: 576px)and (max-width: 767.98px){
+        left: 25%;
+
+        }
+
+
         h1{
 
         margin:0 0 0 0;
@@ -235,4 +327,5 @@ export const ModalButton = styled.button `
                 margin:0 10px;
             }
 
+          
 `

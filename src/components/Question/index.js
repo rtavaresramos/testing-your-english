@@ -10,34 +10,42 @@ import {useParams, Link} from 'react-router-dom'
 
 
 function Question(){
-    // Question States
-    const[question, setQuestion] = useState([])
-    const[rightAnswer, setRightAnswer] = useState([])
-    const[allAnswers, setAllAnswers] = useState([])
-    const[options, setOptions] = useState([])
-    const[difficulty, setDifficulty] = useState([])
-    const[currentQuestion,setCurrentQuestion] = useState(0)
-    const[allCorrectQuestions,setAllCorrectQuestions] = useState(0)
-    const[correctEasyQuestions,setCorrectEasyQuestions] = useState(0)
-    const[correctMediumQuestions,setCorrectMediumQuestions] = useState(0)
-    const[correctHardQuestions,setCorrectHardQuestions] = useState(0)
-    const[wrongEasyQuestions,setWrongEasyQuestions] = useState(0)
-    const[wrongMediumQuestions,setWrongMediumQuestions] = useState(0)
-    const[wrongHardQuestions,setWrongHardQuestions] = useState(0)
-    const[userAnswer,setUserAnswer] = useState()
-    const[btnActive, setBtnActive] = useState("disabled")
-    const[iconLevel, setIconLevel] = useState(``)
+
+    // URL Params
     const { category } = useParams()
+
+
+    // Question structure States
+    const [question, setQuestion] = useState([])
+    const [rightAnswer, setRightAnswer] = useState([])
+    const [allAnswers, setAllAnswers] = useState([])
+    const [options, setOptions] = useState([])
+    const [difficulty, setDifficulty] = useState([])
+    const [currentQuestion,setCurrentQuestion] = useState(0)
+
+    // Question Answers Control States
+    const [allCorrectQuestions,setAllCorrectQuestions] = useState(0)
+    const [correctEasyQuestions,setCorrectEasyQuestions] = useState(0)
+    const [correctMediumQuestions,setCorrectMediumQuestions] = useState(0)
+    const [correctHardQuestions,setCorrectHardQuestions] = useState(0)
+    const [wrongEasyQuestions,setWrongEasyQuestions] = useState(0)
+    const [wrongMediumQuestions,setWrongMediumQuestions] = useState(0)
+    const [wrongHardQuestions,setWrongHardQuestions] = useState(0)
+    const [questionNumber,setQuestionNumber] = useState(1)
+    const [userAnswer,setUserAnswer] = useState()
+    const [btnActive, setBtnActive] = useState("disabled")
 
     // Modal States 
 
-    const[modalClosed, setModalClosed] = useState("hide")
-    const[modalResultColor, setModalResultColor] = useState("")
-    const[modalResultClass, setModalResultClass] = useState("")
-    const[modalResultText, setModalResultText] = useState("")
-    const[modalResultIcon, setModalResultIcon] = useState("")
-    const[finalRoute, setFinalRoute] = useState(`/test/${category}`)
+    const [modalClosed, setModalClosed] = useState("hide")
+    const [modalResultColor, setModalResultColor] = useState("")
+    const [modalResultClass, setModalResultClass] = useState("")
+    const [modalResultText, setModalResultText] = useState("")
+    const [modalResultIcon, setModalResultIcon] = useState("")
+    const [finalRoute, setFinalRoute] = useState(`/test/${category}`)
 
+    // Difficulty Management of Questions
+    const [difficultyControl, setDifficultyControl] = useState(0)
 
     let e = 0
     
@@ -61,17 +69,13 @@ function Question(){
                 if(!allQuestions.includes(question.question)){allQuestions.push(question.question)}
 
                 if(!allRightAnswer.includes(question.question)){allRightAnswer.push( question.correct_answer)}
-
-                if(!allAnswers.includes(question.question[currentQuestion])){allAnswers.push(question.correct_answer)}
-                
-                if(!allAnswers.includes(question.question[currentQuestion])){allAnswers.push(question.incorrect_answers[currentQuestion ])}
-
-                if(!allAnswers.includes(question.question[currentQuestion])){allAnswers.push(question.incorrect_answers[currentQuestion  + 1])}
-
-                if(!allAnswers.includes(question.question[currentQuestion])){allAnswers.push(question.incorrect_answers[currentQuestion + 2])}
+                    allAnswers.push(question.correct_answer)
+                    allAnswers.push(question.incorrect_answers[currentQuestion ])
+                    allAnswers.push(question.incorrect_answers[currentQuestion  + 1])
+                    allAnswers.push(question.incorrect_answers[currentQuestion + 2])
 
                 if(!allDifficulty.includes(question.question)){allDifficulty.push(question.difficulty)}
-                    console.log(allDifficulty)
+
               })
                           
             setQuestion(allQuestions)
@@ -103,14 +107,13 @@ function Question(){
      
  
     function nextQuestion(){
-        if(currentQuestion <9){
-            setCurrentQuestion(currentQuestion + 1)
+        
+        setCurrentQuestion(currentQuestion + 1)
+        
+        if(questionNumber < 10){
             e = 0
             setBtnActive("disabled")
-        }else{
-    
-    setFinalRoute(`/test/${category}/${allCorrectQuestions}/${correctEasyQuestions}/${correctMediumQuestions}/${correctHardQuestions}/${wrongEasyQuestions}/${wrongMediumQuestions}/${wrongHardQuestions}/result`)
-        
+            setQuestionNumber(questionNumber + 1)
         }
     }
     function btnActityVerifyIn(){
@@ -127,51 +130,76 @@ function Question(){
    function answerVerify(){
 
     if(userAnswer == rightAnswer[currentQuestion]){
+        setDifficultyControl(difficultyControl + 1)
 
-        if(difficulty[currentQuestion] == "easy"){
-            setCorrectEasyQuestions(correctEasyQuestions +1)
-        }else{
-            if(difficulty[currentQuestion] == "medium"){
+        switch(difficulty[currentQuestion]){
+            case "easy":
+                setCorrectEasyQuestions(correctEasyQuestions +1)
+            break;
+
+            case "medium":
                 setCorrectMediumQuestions(correctMediumQuestions +1)
-            }else{
-                if(difficulty[currentQuestion] == "hard"){
-                    setCorrectHardQuestions(correctHardQuestions +1)
-                }
-            }
+            break;
+
+            case "hard":
+                setCorrectHardQuestions(correctHardQuestions +1)
+            break;
+
+            default:
+                console.log(' resposta correta não foi selecionada')
+
         }
+
         setAllCorrectQuestions(allCorrectQuestions + 1)
-        setModalResultText("acertou")
+        setModalResultText("Você acertou!")
         setModalResultColor("#32CB82")
         setModalResultClass("right")
         setModalResultIcon("fas fa-check-circle")
 
 
     }else{
+        setDifficultyControl(difficultyControl - 1)
 
-
-            if(difficulty[currentQuestion] == "easy"){
+        switch(difficulty[currentQuestion]){
+            case "easy":
                 setWrongEasyQuestions(wrongEasyQuestions +1)
-            }else{
-                if(difficulty[currentQuestion] == "medium"){
-                    setWrongMediumQuestions(wrongMediumQuestions +1)
-                }else{
-                    if(difficulty[currentQuestion] == "hard"){
-                        setWrongHardQuestions(wrongHardQuestions +1)
-                    }
-                }
-            }
-        
-        setModalResultText("errou")
+
+            break;
+
+            case "medium":
+                setWrongMediumQuestions(wrongMediumQuestions +1)
+
+            break;
+
+            case "hard":
+                setWrongHardQuestions(wrongHardQuestions +1)
+
+            break;
+            default:
+                console.log(' resposta errada não foi selecionada')
+
+        }
+           
+        setModalResultText("Você errou!")
         setModalResultColor("#FF4F4F")
         setModalResultClass("wrong")
         setModalResultIcon("fas fa-times-circle")
 
 
     }
+    setModalClosed("Show")
    }
 
    function closeModal(){
-    setModalClosed("hide")}
+       if(currentQuestion > 8){
+        setModalResultText("Verificar resultado")
+        setModalResultColor("#438DE4")
+        setModalResultClass("end")
+        setModalResultIcon("fas fa-clipboard-check")
+
+        setFinalRoute(`/test/${category}/${allCorrectQuestions}/${correctEasyQuestions}/${correctMediumQuestions}/${correctHardQuestions}/${wrongEasyQuestions}/${wrongMediumQuestions}/${wrongHardQuestions}/result`)
+       }else{
+    setModalClosed("hide")}}
     return (<div>
 
         <QuestionContainer>
@@ -201,7 +229,7 @@ function Question(){
                                     <Row>
 
                                         <Col de='6'>
-                                            <h1> {`Questão ${currentQuestion + 1}`}</h1>
+                                            <h1> {`Questão ${questionNumber}`}</h1>
                                         </Col>
                                         <Col de='6'>
                                             <div className="questionLevel">
@@ -251,9 +279,8 @@ function Question(){
                                     </QuestionOption>
 
                                     <AnswerButton id="buttonAnswer" onClick={function(){
-                                        setModalClosed("Show")
                                         answerVerify()
-                                        nextQuestion()}}
+                                        }}
                                          className={btnActive}
                                     >
                                         Responda
@@ -268,9 +295,12 @@ function Question(){
                         <i  className={modalResultIcon}></i>
                     </span>
                 </div>
-            <h1>{`Você ${modalResultText} !`}</h1>
+            <h1>{modalResultText}</h1>
                 <Link to={finalRoute}>
-                <ModalButton onClick={closeModal}>
+                <ModalButton onClick={function(){
+                    nextQuestion()
+                    closeModal()
+                    }}>
                     Avançar
                     <i className="fas fa-arrow-right"></i>
                 </ModalButton>

@@ -38,13 +38,14 @@ import api from '../../services/api'
                         </Col>
                     </Row>
                 </SectionContainer>
-                <SectionContainer>
+                <SectionContainer >
                     <CardSection>
-                        <Row>
+                        <Row >
+
                             { categories.map( ( category, cat ) => (
-                                <Link to={`/test/${category}`}>
-                                <Col id={category} key={ cat }
-                                 de='3' >
+                                <Link to={`/test/${category}`} key={ cat }>
+                                <Col id={category} 
+                                 de='3' xs='6' sm='4' md='3'>
                                     <CardButton>
                                         <h1>{ category }</h1>
                                     </CardButton>

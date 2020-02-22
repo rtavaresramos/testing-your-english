@@ -3,8 +3,7 @@ import {Switch , Route} from 'react-router-dom'
 import { Home} from './pages/Home'
 import { Test } from './pages/Question'
 import { Result} from './pages/FinalResult'
-import RightModalResult from './components/ModalResult/RightAnswer';
-import WrongModalResult from './components/ModalResult/WrongAnswer';
+
 
 
 export default function Routes(){
