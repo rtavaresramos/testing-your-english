@@ -9,11 +9,16 @@ import { FinalResultContainer , FinalResultCard, Header ,
     InfoHeader, ResultButton } from './styles';
 
 export default function FinalResult(){
-        let { allRightQuestions, rightEasyQuestions, rightMediumQuestions,
+        let { category, allRightQuestions, rightEasyQuestions, rightMediumQuestions,
              rightHardQuestions, wrongEasyQuestions, 
-             wrongMediumQuestions, wrongHardQuestions, } = useParams()
-
+             wrongMediumQuestions, wrongHardQuestions } = useParams()
+        let arr = []
+             
     
+        if(arr.indexOf(category) === -1){
+            arr.push(category, allRightQuestions,rightEasyQuestions, rightMediumQuestions,rightHardQuestions,
+                wrongEasyQuestions,wrongMediumQuestions, wrongHardQuestions)}
+
     return (<div>
         <FinalResultContainer className="hide">
             <Container>
@@ -77,7 +82,7 @@ export default function FinalResult(){
                                     </div>
                                 </Row>
                                 <Row>
-                                    <Link to="/">
+                                    <Link to={`/test/${category}/${allRightQuestions}/${rightEasyQuestions}/${rightMediumQuestions}/${rightHardQuestions}/${wrongEasyQuestions}/${wrongMediumQuestions}/${wrongHardQuestions}/${arr}/home`}>
                                     <ResultButton> Voltar ao início</ResultButton>
                                     </Link>
                                 </Row>

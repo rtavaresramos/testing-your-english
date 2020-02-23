@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link , useParams } from 'react-router-dom'
 import { SectionContainer, Container , Row } from '../styleGrid/base'
 import { Col } from '../styleGrid/grid';
 import { HomeContainer, CardButton , CardSection } from './styles'
@@ -7,8 +7,20 @@ import api from '../../services/api'
 
 
  function HomeContent() {
+    let { categoryReturn, allRightQuestions, rightEasyQuestions, rightMediumQuestions,
+        rightHardQuestions, wrongEasyQuestions, 
+        wrongMediumQuestions, wrongHardQuestions , arr} = useParams()
 
     const [categories, setCategories] = useState([])
+    const [categoriesReturn, setCategoriesReturn] = useState([])
+    const [counter, setCounter] = useState()
+
+
+
+    let auxCategoriesReturn =[]
+
+   
+
     useEffect(() => {
         async function loadCategories() {
             const response = await api.get()
@@ -23,7 +35,7 @@ import api from '../../services/api'
         }
         loadCategories()
      }, [
-        setCategories
+        categories
      ])
 
     return (
@@ -43,7 +55,16 @@ import api from '../../services/api'
                         <Row >
 
                             { categories.map( ( category, cat ) => (
-                                <Link to={`/test/${category}`} key={ cat }>
+                                <Link to={function(){
+                                    let e = ''
+                                        if(auxCategoriesReturn.indexOf(category) !== -1){
+                                            e = `/test/${category}/${allRightQuestions}/${rightEasyQuestions}/${rightMediumQuestions}/${rightHardQuestions}/${wrongEasyQuestions}/${wrongMediumQuestions}/${wrongHardQuestions}/result`
+                                        }else{
+                                            e = `/test/${category}`
+                                        }
+                                    
+                                    return e 
+                                }} key={ cat }>
                                 <Col id={category} 
                                  de='3' xs='6' sm='4' md='3'>
                                     <CardButton>

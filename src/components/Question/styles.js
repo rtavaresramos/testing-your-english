@@ -123,7 +123,8 @@ export const QuestionHeader = styled.header`
             position:absolute;
             font-size:.2em;
             text-align: center;
-            right: 50px;
+            margin-right: 15px;
+            right: 40px;
             top: 5px;
         }
         p{

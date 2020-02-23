@@ -21,7 +21,7 @@ function Question(){
     const [allAnswers, setAllAnswers] = useState([])
     const [options, setOptions] = useState([])
     const [difficulty, setDifficulty] = useState([])
-    const [currentQuestion,setCurrentQuestion] = useState(0)
+    const [currentQuestion,setCurrentQuestion] = useState(10)
 
     // Question Answers Control States
     const [allCorrectQuestions,setAllCorrectQuestions] = useState(0)
@@ -31,6 +31,7 @@ function Question(){
     const [wrongEasyQuestions,setWrongEasyQuestions] = useState(0)
     const [wrongMediumQuestions,setWrongMediumQuestions] = useState(0)
     const [wrongHardQuestions,setWrongHardQuestions] = useState(0)
+    const [counter,setCounter] = useState(0)
     const [questionNumber,setQuestionNumber] = useState(1)
     const [userAnswer,setUserAnswer] = useState()
     const [btnActive, setBtnActive] = useState("disabled")
@@ -47,10 +48,18 @@ function Question(){
     // Difficulty Management of Questions
     const [difficultyControl, setDifficultyControl] = useState(0)
 
+    // Test details
+    const [testDetails, setTestDetails] = useState([])
+
+
+//  Some variables which don't need to be an useState's variable, justo for happenings control
     let e = 0
-    
+    let icon_1 = "hide"
+    let icon_2 = ""
+   
 
 
+//  Getting datas from the API with all questions, and informations about them
 
     useEffect(() => {
         async function loadQuestions() {
@@ -70,12 +79,11 @@ function Question(){
 
                 if(!allRightAnswer.includes(question.question)){allRightAnswer.push( question.correct_answer)}
                     allAnswers.push(question.correct_answer)
-                    allAnswers.push(question.incorrect_answers[currentQuestion ])
-                    allAnswers.push(question.incorrect_answers[currentQuestion  + 1])
-                    allAnswers.push(question.incorrect_answers[currentQuestion + 2])
+                    allAnswers.push(question.incorrect_answers[counter ])
+                    allAnswers.push(question.incorrect_answers[counter  + 1])
+                    allAnswers.push(question.incorrect_answers[counter + 2])
 
                 if(!allDifficulty.includes(question.question)){allDifficulty.push(question.difficulty)}
-
               })
                           
             setQuestion(allQuestions)
@@ -88,6 +96,9 @@ function Question(){
         loadQuestions()
      },[])
     
+
+//  Adjusting the control of the order that the options appears in the screen
+
     useEffect(()=>{
         function sortOptionsInArray(){
             let option = []
@@ -103,19 +114,50 @@ function Question(){
 
         }
         sortOptionsInArray()
-    },[allAnswers, currentQuestion])
+    },[allAnswers, counter])
      
- 
+    function iconDifficultyControl(){
+        switch(difficulty[currentQuestion]){
+            
+            case "easy": 
+                icon_1 = "hide"
+                icon_2 = "hide"
+            break
+
+            case "medium": icon_1 = "hide"
+            break
+
+            case "hard":
+                icon_1 = ""
+                icon_2 = ""
+
+            default:
+        }
+    }
+
+    iconDifficultyControl()
+
+//  Here we have the function which change questions and options in the screen, as a SPA project, 
+// it use the just one component and only datas are updated
+
     function nextQuestion(){
+            
         
-        setCurrentQuestion(currentQuestion + 1)
-        
+        if (counter < 9 ){
+            setCurrentQuestion(currentQuestion + 1)
+            setCounter(counter + 1)
+            iconDifficultyControl()
+        }
         if(questionNumber < 10){
             e = 0
             setBtnActive("disabled")
             setQuestionNumber(questionNumber + 1)
         }
+
     }
+
+//  Here there is a activate control for the button to send the user answer
+
     function btnActityVerifyIn(){
         
         var e = 1 
@@ -126,11 +168,20 @@ function Question(){
     function btnActivityVerifyOut(){
         if(e = 0){setBtnActive("disabled")}}
 
+//  Here, the function verify if the answer from user is correct or not. Also call the function which
+// change or not the question level
 
    function answerVerify(){
-
+    
     if(userAnswer == rightAnswer[currentQuestion]){
         setDifficultyControl(difficultyControl + 1)
+    }else{
+        setDifficultyControl(difficultyControl - 1)
+    }
+    checkDifficulty()
+
+
+    if(userAnswer == rightAnswer[currentQuestion]){
 
         switch(difficulty[currentQuestion]){
             case "easy":
@@ -158,7 +209,6 @@ function Question(){
 
 
     }else{
-        setDifficultyControl(difficultyControl - 1)
 
         switch(difficulty[currentQuestion]){
             case "easy":
@@ -187,19 +237,108 @@ function Question(){
 
 
     }
+     console.log(testDetails)
     setModalClosed("Show")
    }
 
+
+//  Here, is the function which check the current difficulty, and the two ones bellow get up or down the
+//  difficulty level from the next question
+
+   function checkDifficulty(){
+       if(counter < 9){
+        switch(difficultyControl){
+            case 1:
+             changeUpDifficulty()
+            setDifficultyControl(0)
+            break
+ 
+            case -1:
+             changeDownDifficulty()
+             setDifficultyControl(0)
+ 
+             break
+ 
+             default:
+        }
+       }
+       
+   }
+
+   function changeDownDifficulty(){
+       switch(difficulty[currentQuestion]){
+        case "hard": 
+        setCurrentQuestion(currentQuestion - 10)
+        
+        break
+
+        case "medium":
+            setCurrentQuestion(currentQuestion - 10)
+
+        break
+
+
+        default:
+       }
+   }
+   function changeUpDifficulty(){
+       switch(difficulty[currentQuestion]){
+        case "easy": 
+        
+            setCurrentQuestion(currentQuestion + 10)
+
+        break
+
+        case "medium":
+            setCurrentQuestion(currentQuestion + 10)
+
+        break
+
+
+        default:
+       }
+   }
+
+   function getCurrentDate(){
+    var dNow = new Date();
+    var localdate = dNow.getDate() + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes()
+    return localdate
+
+  }
+
+//  Here, you have the function which sends the information necessary to the FinalResult component
    function closeModal(){
-       if(currentQuestion > 8){
+        setTestDetails([... testDetails,{category:`"${category}"`, userAnswer:`"${userAnswer}"`,
+        difficulty:`"${difficulty[currentQuestion]}"`, rightAnswer:`"${rightAnswer[currentQuestion]}"`, 
+        localdate:`"${getCurrentDate()}"`, result:`"${detailsVerify()}"`}])
+
+       if(counter > 8){
         setModalResultText("Verificar resultado")
         setModalResultColor("#438DE4")
         setModalResultClass("end")
         setModalResultIcon("fas fa-clipboard-check")
 
+        setTestDetails([... testDetails,{category:`"${category}"`, userAnswer:`"${userAnswer}"`,
+        difficulty:`"${difficulty[currentQuestion]}"`, rightAnswer:`"${rightAnswer[currentQuestion]}"`, 
+        localdate:`"${getCurrentDate()}"`, result:`"${detailsVerify()}"`}])
+        console.log(testDetails)
+        console.log("Os dados pesistem, e aqui nesse ponto, ajustaria um POST pra enviar o JSON pro Banco de Dados")
+
         setFinalRoute(`/test/${category}/${allCorrectQuestions}/${correctEasyQuestions}/${correctMediumQuestions}/${correctHardQuestions}/${wrongEasyQuestions}/${wrongMediumQuestions}/${wrongHardQuestions}/result`)
        }else{
     setModalClosed("hide")}}
+
+    
+    function detailsVerify(){
+    if(userAnswer == rightAnswer){
+        
+        return "right"
+    
+    }else{
+            
+            return "wrong"}
+    }
+
     return (<div>
 
         <QuestionContainer>
@@ -227,7 +366,6 @@ function Question(){
                         <QuestionHeader>
                                 <Container>
                                     <Row>
-
                                         <Col de='6'>
                                             <h1> {`Questão ${questionNumber}`}</h1>
                                         </Col>
@@ -235,9 +373,10 @@ function Question(){
                                             <div className="questionLevel">
                                                 <h2> 
                                                     <span>
-                                                        <i className="fas fa-star"></i>
-                                                        <i className="fas fa-star"></i>
-                                                        <i className="fas fa-star"></i>
+                                                        <i className={`fas fa-star ${icon_1}`}></i>
+                                                        <i className={`fas fa-star ${icon_2}`}></i>
+                                                        <i className="fas fa-star "></i>
+                                                        
                                                     </span>
                                                     {difficulty[currentQuestion]}  
                                                 </h2>
@@ -252,29 +391,25 @@ function Question(){
                             <QuestionAnswer>
                                     <QuestionOption onFocus={function(){btnActityVerifyIn()
                                      setUserAnswer(options[0])}}
-                                    onBlur={btnActivityVerifyOut}
-                                     className="answerOption">
+                                    onBlur={btnActivityVerifyOut}>
                                         <p>{options[0]}</p>
                                     </QuestionOption>
                                     
                                     <QuestionOption onFocus={function(){btnActityVerifyIn()
                                      setUserAnswer(options[1])}}
-                                    onBlur={btnActivityVerifyOut}
-                                     className="answerOption">
+                                    onBlur={btnActivityVerifyOut}>
                                         <p>{options[1]}</p>
                                     </QuestionOption>
 
                                     <QuestionOption onFocus={function(){btnActityVerifyIn()
                                     setUserAnswer(options[2])}}
-                                    onBlur={btnActivityVerifyOut}
-                                     className="answerOption">
+                                    onBlur={btnActivityVerifyOut}>
                                         <p>{options[2]}</p>
                                     </QuestionOption>
 
                                     <QuestionOption onFocus={   function(){btnActityVerifyIn()
                                      setUserAnswer(options[3])}}
-                                    onBlur={btnActivityVerifyOut}
-                                     className="answerOption">
+                                    onBlur={btnActivityVerifyOut}>
                                         <p>{options[3]}</p>
                                     </QuestionOption>
 
