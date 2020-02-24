@@ -487,7 +487,10 @@ function closeModal(){
             <h1>{modalResultText}</h1>
                 <Link to={finalRoute}>
                 <ModalButton onClick={function(){
-                    setOption()
+                    setoptionVerify1("")
+                    setoptionVerify2("")
+                    setoptionVerify3("")
+                    setoptionVerify4("")
                     nextQuestion()
                     closeModal()
                     }}>
