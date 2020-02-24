@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link , useParams } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import QuestionCategoryCard from '../QuestionCategoryCard'
+ 
+
 import { SectionContainer, Container , Row } from '../styleGrid/base'
 import { Col } from '../styleGrid/grid';
-import { HomeContainer, CardButton , CardSection } from './styles'
-import api from '../../services/api'
+import { HomeContainer, CardSection } from './styles'
 
 
  function HomeContent() {
@@ -11,32 +14,19 @@ import api from '../../services/api'
         rightHardQuestions, wrongEasyQuestions, 
         wrongMediumQuestions, wrongHardQuestions , arr} = useParams()
 
-    const [categories, setCategories] = useState([])
     const [categoriesReturn, setCategoriesReturn] = useState([])
     const [counter, setCounter] = useState()
 
-
+    const categoriesDone = useSelector( state => state.data)
+    const dispatch = useDispatch( )
 
     let auxCategoriesReturn =[]
 
-   
+   function addCourseDone(){
+       dispatch({ type: 'CATEGORY_DONE', category: `'${categoryReturn}'`})
+   }
 
-    useEffect(() => {
-        async function loadCategories() {
-            const response = await api.get()
-            const data = await response.data
-            let categories = []
 
-            data.forEach( question => {
-                if ( !categories.includes(question.category) ) { categories.push(question.category) }
-            } )
-
-            setCategories(categories)
-        }
-        loadCategories()
-     }, [
-        categories
-     ])
 
     return (
         <HomeContainer>
@@ -53,26 +43,7 @@ import api from '../../services/api'
                 <SectionContainer >
                     <CardSection>
                         <Row >
-
-                            { categories.map( ( category, cat ) => (
-                                <Link to={function(){
-                                    let e = ''
-                                        if(auxCategoriesReturn.indexOf(category) !== -1){
-                                            e = `/test/${category}/${allRightQuestions}/${rightEasyQuestions}/${rightMediumQuestions}/${rightHardQuestions}/${wrongEasyQuestions}/${wrongMediumQuestions}/${wrongHardQuestions}/result`
-                                        }else{
-                                            e = `/test/${category}`
-                                        }
-                                    
-                                    return e 
-                                }} key={ cat }>
-                                <Col id={category} 
-                                 de='3' xs='6' sm='4' md='3'>
-                                    <CardButton>
-                                        <h1>{ category }</h1>
-                                    </CardButton>
-                                </Col>
-                                </Link>
-                            ) )}
+                            <QuestionCategoryCard/>
                         </Row>
                     </CardSection>
                 </SectionContainer>
