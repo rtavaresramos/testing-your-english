@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     data:[],
 }
 
-function categoriesDone( state, action ){
+function categoriesDone( state = INITIAL_STATE , action ){
 
     switch(action.type){
         case 'CATEGORY_DONE':

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { Link , useParams } from 'react-router-dom'
 import { SectionContainer, Container , Row } from '../styleGrid/base'
 import { Col } from '../styleGrid/grid';
