@@ -207,7 +207,6 @@ export const AnswerButton = styled.button`
             font-weight: 500;
             font-size: 16px;
             outline:none;
-            -webkit-appearance: none;
 
 
             
@@ -368,7 +367,6 @@ export const ModalButton = styled.button `
             background: #0467DB;
             border: none;
             outline: none;
-            -webkit-appearance: none;
 
             i{
                 margin:0 10px;
