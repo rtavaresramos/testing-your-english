@@ -28,6 +28,10 @@ function Question(){
     const [options, setOptions] = useState([])
     const [difficulty, setDifficulty] = useState([])
     const [currentQuestion,setCurrentQuestion] = useState(10)
+    const [optionVerify1, setoptionVerify1] = useState("")
+    const [optionVerify2, setoptionVerify2] = useState("")
+    const [optionVerify3, setoptionVerify3] = useState("")
+    const [optionVerify4, setoptionVerify4] = useState("")
 
     // Question Answers Control States
     const [allCorrectQuestions,setAllCorrectQuestions] = useState(0)
@@ -312,14 +316,26 @@ function Question(){
 
   }
 
-  function addCategorieDone(){
+ 
+//  Here, you have the function which sends the information necessary to the FinalResult component
+function addCategorieDone(){
     dispatch({ type: 'CATEGORY_DONE', category:`${category}`, allRightQuestions: `${allCorrectQuestions}`, 
     rightEasyQuestions: `${correctEasyQuestions}`,rightMediumQuestions: `${correctMediumQuestions}`,
     rightHardQuestions: `${correctHardQuestions}`,wrongEasyQuestions: `${wrongEasyQuestions}`,
     wrongMediumQuestions: `${wrongMediumQuestions}`,wrongHardQuestions: `${wrongHardQuestions}`})
   }
-//  Here, you have the function which sends the information necessary to the FinalResult component
-   function closeModal(){
+
+  function detailsVerify(){
+    if(userAnswer == rightAnswer){
+        
+        return "right"
+    
+    }else{
+            
+            return "wrong"}
+    }
+
+function closeModal(){
         
         dispatch({ type: 'ANSWERS_DATAILS', category:`"${category}"`, userAnswer:`"${userAnswer}"`,
         difficulty:`"${difficulty[currentQuestion]}"`, rightAnswer:`"${rightAnswer[currentQuestion]}"`, 
@@ -345,16 +361,37 @@ function Question(){
        }else{
     setModalClosed("hide")}}
 
-    
-    function detailsVerify(){
-    if(userAnswer == rightAnswer){
-        
-        return "right"
-    
-    }else{
-            
-            return "wrong"}
+
+    // Here is the control about the border of selected option
+
+    function setOption(){
+        setoptionVerify1("")
+        setoptionVerify2("")
+        setoptionVerify3("")
+        setoptionVerify4("")
+
+
+        switch(userAnswer){
+            case options[0]:
+                 setoptionVerify1("selected")
+            break
+
+            case options[1]:
+                 setoptionVerify2("selected")
+            break
+
+            case options[2]:
+                 setoptionVerify3("selected")
+            break
+
+            case options[3]:
+                setoptionVerify4("selected")
+            break
+
+            default:
+        }
     }
+
 
     return (<div>
 
@@ -406,25 +443,25 @@ function Question(){
                                 </Container>
                             </QuestionHeader>
                             <QuestionAnswer>
-                                    <QuestionOption onClick={function(){btnActityVerifyIn()
+                                    <QuestionOption onClick={setOption}className={optionVerify1}onFocus={function(){btnActityVerifyIn()
                                      setUserAnswer(options[0])}}
                                     onBlur={btnActivityVerifyOut}>
                                         <p>{options[0]}</p>
                                     </QuestionOption>
                                     
-                                    <QuestionOption onClick={function(){btnActityVerifyIn()
+                                    <QuestionOption onClick={setOption}className={optionVerify2}onFocus={function(){btnActityVerifyIn()
                                      setUserAnswer(options[1])}}
                                     onBlur={btnActivityVerifyOut}>
                                         <p>{options[1]}</p>
                                     </QuestionOption>
 
-                                    <QuestionOption onClick={function(){btnActityVerifyIn()
+                                    <QuestionOption onClick={setOption}className={optionVerify3}onFocus={function(){btnActityVerifyIn()
                                     setUserAnswer(options[2])}}
                                     onBlur={btnActivityVerifyOut}>
                                         <p>{options[2]}</p>
                                     </QuestionOption>
 
-                                    <QuestionOption onClick={   function(){btnActityVerifyIn()
+                                    <QuestionOption onClick={setOption}className={optionVerify4}onFocus={   function(){btnActityVerifyIn()
                                      setUserAnswer(options[3])}}
                                     onBlur={btnActivityVerifyOut}>
                                         <p>{options[3]}</p>

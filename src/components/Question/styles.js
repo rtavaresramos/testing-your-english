@@ -158,6 +158,11 @@ export const QuestionAnswer = styled.div`
             background: #C9CCCF;
             }
 
+            .selected{
+            /* pointer-events: ; */
+            border:4px solid #0467DB;
+        }
+
 `
 export const QuestionOption = styled.button`
         
@@ -169,9 +174,7 @@ export const QuestionOption = styled.button`
         border-radius: 8px;
         outline: none;
 
-        .selected{
-            border: 2px solid #0467DB;
-        }
+        
 
         p{
             margin: 0 5px;
