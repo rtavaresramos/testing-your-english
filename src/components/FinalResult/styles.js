@@ -118,7 +118,7 @@ export const FinalResultCard = styled.div`
             }
         }
 
-        @media (min-width: 374px) and (max-device-width: 479.98px){ 
+        @media (min-device-width: 359px) and (max-device-width: 479.98px){ 
         
         height: 720px;
         padding: 0 ;
@@ -132,7 +132,9 @@ export const FinalResultCard = styled.div`
         .resultDescription2 {
             display:flex;
             flex-direction: column;
-            padding-left: 15%;
+            padding-left: 10%;
+
+
 
         }
 

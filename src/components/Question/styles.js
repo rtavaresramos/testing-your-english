@@ -204,24 +204,33 @@ export const AnswerButton = styled.button`
             outline:none;
 
             
+            @media (max-device-width: 479.98px){
+                margin:10px 0;
+                width: 92%;
+                height: 34px;
 
+            }
 
+            @media (min-device-width:480px) and (max-device-width: 767.98px){
+                
+                margin:10px 0;
+                width: 92%;
+                height: 34px
+            }
 
             @media (max-width: 575.98px){
                
-            AnswerButton{
+
                 margin:10px 0;
                 width: 92%;
                 height: 34px;
-            }
+
              }
 
              @media (min-width: 576px) and (max-width: 767.98px){
-                AnswerButton{
-                margin:10px 0;
-                width: 92%;
-                height: 34px;
-            }
+
+                ;
+
 
              }
              @media (min-width: 768px) and (max-width: 1119.98px){ 
@@ -278,6 +287,33 @@ export const ModalContent = styled.div `
         border-radius: 8px;
         padding-top:20px;
 
+        @media (max-device-width: 479.98px){
+
+            height: 228px;
+            width: 290px;
+            h1{
+
+                position:absolute;
+                left: -2%;
+                top: 40%
+           
+
+            }
+
+            span{
+                position:absolute;
+                left: -7%;
+                
+                }
+
+            }
+
+            @media (min-device-width:480px) and (max-device-width: 767.98px){
+                
+                left: 25%;
+
+            }
+
 
         @media  (max-width: 575.98px){
         left: 13%;
@@ -328,6 +364,14 @@ export const ModalButton = styled.button `
             i{
                 margin:0 10px;
             }
+
+
+            @media (max-device-width: 479.98px){
+
+            position:absolute;
+            left: -5%;
+            top: 65%
+
 
           
 `
