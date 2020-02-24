@@ -65,7 +65,7 @@ export default function FinalResult(){
                                 </Row>
                                 <Row>
                                     <InfoHeader>
-                                        <h1>Veja seu desependo nas questões</h1>
+                                        <h1>Veja seu desepenho nas questões</h1>
                                     </InfoHeader>
                                 </Row>
                             </Header>
