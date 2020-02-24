@@ -487,6 +487,7 @@ function closeModal(){
             <h1>{modalResultText}</h1>
                 <Link to={finalRoute}>
                 <ModalButton onClick={function(){
+                    setOption()
                     nextQuestion()
                     closeModal()
                     }}>
