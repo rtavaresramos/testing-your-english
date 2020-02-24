@@ -1,5 +1,7 @@
 import { createStore } from 'redux'
 
+//  Here we have the redux store to keep the global states
+
 
 const INITIAL_STATE = {
     data:[],

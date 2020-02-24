@@ -5,6 +5,7 @@ import { Test } from './pages/Question'
 import { Result} from './pages/FinalResult'
 
 
+//  Here are setted the routes from the appliction
 
 export default function Routes(){
     return <>
