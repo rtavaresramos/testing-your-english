@@ -406,25 +406,25 @@ function Question(){
                                 </Container>
                             </QuestionHeader>
                             <QuestionAnswer>
-                                    <QuestionOption onFocus={function(){btnActityVerifyIn()
+                                    <QuestionOption onClick={function(){btnActityVerifyIn()
                                      setUserAnswer(options[0])}}
                                     onBlur={btnActivityVerifyOut}>
                                         <p>{options[0]}</p>
                                     </QuestionOption>
                                     
-                                    <QuestionOption onFocus={function(){btnActityVerifyIn()
+                                    <QuestionOption onClick={function(){btnActityVerifyIn()
                                      setUserAnswer(options[1])}}
                                     onBlur={btnActivityVerifyOut}>
                                         <p>{options[1]}</p>
                                     </QuestionOption>
 
-                                    <QuestionOption onFocus={function(){btnActityVerifyIn()
+                                    <QuestionOption onClick={function(){btnActityVerifyIn()
                                     setUserAnswer(options[2])}}
                                     onBlur={btnActivityVerifyOut}>
                                         <p>{options[2]}</p>
                                     </QuestionOption>
 
-                                    <QuestionOption onFocus={   function(){btnActityVerifyIn()
+                                    <QuestionOption onClick={   function(){btnActityVerifyIn()
                                      setUserAnswer(options[3])}}
                                     onBlur={btnActivityVerifyOut}>
                                         <p>{options[3]}</p>

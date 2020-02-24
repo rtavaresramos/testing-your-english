@@ -169,8 +169,8 @@ export const QuestionOption = styled.button`
         border-radius: 8px;
         outline: none;
 
-        :focus{
-            box-shadow: 0 0 1px 3px #0467DB;
+        .selected{
+            border: 2px solid #0467DB;
         }
 
         p{
@@ -229,23 +229,24 @@ export const AnswerButton = styled.button`
 
              @media (min-width: 576px) and (max-width: 767.98px){
 
-                ;
-
-
-             }
-             @media (min-width: 768px) and (max-width: 1119.98px){ 
-                AnswerButton{
                 margin:10px 0;
                 width: 92%;
                 height: 34px;
-                }
+
+             }
+             @media (min-width: 768px) and (max-width: 1119.98px){ 
+
+                margin:10px 0;
+                width: 92%;
+                height: 34px;
+
              }
              @media (min-width: 1120px) and (max-width: 1219.98px){ 
-                AnswerButton{
+
                 margin:10px 200px;
                 width: 149px;
                 height: 44px;
-                }
+
              }
 
 `
