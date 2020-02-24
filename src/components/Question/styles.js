@@ -173,7 +173,7 @@ export const QuestionOption = styled.button`
         box-shadow: 0px 1px 4px rgba(52, 60, 88, 0.4);
         border-radius: 8px;
         outline: none;
-        -webkit-appearance: none;
+
 
 
         
