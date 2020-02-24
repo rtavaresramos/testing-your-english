@@ -7,9 +7,15 @@ import { QuestionContainer, QuestionCard ,
 import { ModalContainer, ModalContent, ModalButton } from './styles'
 import api from '../../services/api'
 import {useParams, Link} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 
 function Question(){
+
+
+    // Variables relationed with Global State using Redux Hooks
+
+    const dispatch = useDispatch()
 
     // URL Params
     const { category } = useParams()
@@ -237,7 +243,7 @@ function Question(){
 
 
     }
-     console.log(testDetails)
+
     setModalClosed("Show")
    }
 
@@ -306,25 +312,36 @@ function Question(){
 
   }
 
+  function addCategorieDone(){
+    dispatch({ type: 'CATEGORY_DONE', category:`${category}`, allRightQuestions: `${allCorrectQuestions}`, 
+    rightEasyQuestions: `${correctEasyQuestions}`,rightMediumQuestions: `${correctMediumQuestions}`,
+    rightHardQuestions: `${correctHardQuestions}`,wrongEasyQuestions: `${wrongEasyQuestions}`,
+    wrongMediumQuestions: `${wrongMediumQuestions}`,wrongHardQuestions: `${wrongHardQuestions}`})
+  }
 //  Here, you have the function which sends the information necessary to the FinalResult component
    function closeModal(){
-        setTestDetails([... testDetails,{category:`"${category}"`, userAnswer:`"${userAnswer}"`,
+        
+        dispatch({ type: 'ANSWERS_DATAILS', category:`"${category}"`, userAnswer:`"${userAnswer}"`,
         difficulty:`"${difficulty[currentQuestion]}"`, rightAnswer:`"${rightAnswer[currentQuestion]}"`, 
-        localdate:`"${getCurrentDate()}"`, result:`"${detailsVerify()}"`}])
-
+        localdate:`"${getCurrentDate()}"`, result:`"${detailsVerify()}"`})
+      
        if(counter > 8){
         setModalResultText("Verificar resultado")
         setModalResultColor("#438DE4")
         setModalResultClass("end")
         setModalResultIcon("fas fa-clipboard-check")
 
-        setTestDetails([... testDetails,{category:`"${category}"`, userAnswer:`"${userAnswer}"`,
+        dispatch({ type: 'ANSWERS_DATAILS', category:`"${category}"`, userAnswer:`"${userAnswer}"`,
         difficulty:`"${difficulty[currentQuestion]}"`, rightAnswer:`"${rightAnswer[currentQuestion]}"`, 
-        localdate:`"${getCurrentDate()}"`, result:`"${detailsVerify()}"`}])
-        console.log(testDetails)
-        console.log("Os dados pesistem, e aqui nesse ponto, ajustaria um POST pra enviar o JSON pro Banco de Dados")
+        localdate:`"${getCurrentDate()}"`, result:`"${detailsVerify()}"`})
+        
 
-        setFinalRoute(`/test/${category}/${allCorrectQuestions}/${correctEasyQuestions}/${correctMediumQuestions}/${correctHardQuestions}/${wrongEasyQuestions}/${wrongMediumQuestions}/${wrongHardQuestions}/result`)
+        console.log(`"Os seguintes dados estão sendo mantidos como estado global de type: ANSWER_DETAILS => category:${category}, userAnswer:${userAnswer},difficulty:${difficulty[currentQuestion]}, rightAnswer:${rightAnswer[currentQuestion]}, localdate:${getCurrentDate()}, result:${detailsVerify()}"`)
+
+
+        addCategorieDone()
+
+        setFinalRoute(`/test/${category}/result`)
        }else{
     setModalClosed("hide")}}
 

@@ -11,7 +11,12 @@ function categoriesDone( state = INITIAL_STATE , action ){
         case 'CATEGORY_DONE':
             return {...state , data: [...state.data, action.category , action.allRightQuestions, 
             action.rightEasyQuestions, action.rightMediumQuestions, action.rightHardQuestions,
-        action.wrongEasyQuestions, action.wrongMediumQuestions, action.wrongHardQuestions] }
+        action.wrongEasyQuestions, action.wrongMediumQuestions, action.wrongHardQuestions]}
+
+        case 'ANSWERS_DATAILS': 
+        return {...state , data: [...state.data, action.category, action.userAnswer,
+        action.difficulty, action.rightAnswer, action.localdate, action.result]}
+        
         default:
             return state
     }

@@ -10,9 +10,8 @@ export default function Routes(){
     return <>
         <Switch>
           <Route exact path={"/"} component={Home} />
-          <Route exact path={"/test/:categoryReturn/:allRightQuestions/:rightEasyQuestions/:rightMediumQuestions/:rightHardQuestions/:wrongEasyQuestions/:wrongMediumQuestions/:wrongHardQuestions/:arr/home"} component={Home} />
           <Route exact path="/test/:category/" component={Test}/>
-          <Route exact path="/test/:category/:allRightQuestions/:rightEasyQuestions/:rightMediumQuestions/:rightHardQuestions/:wrongEasyQuestions/:wrongMediumQuestions/:wrongHardQuestions/result" component={Result}/>
+          <Route exact path="/test/:categoryDoneReturn/result" component={Result}/>
           
         </Switch>
     </>

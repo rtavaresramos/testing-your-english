@@ -1,25 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { SectionContainer, Container , Row } from '../styleGrid/base';
-import { Col } from '../styleGrid/grid';
+import React, { useState, useEffect } from 'react'
 import MonsterIcon from './monster-icon.png'
 import {useParams , Link} from 'react-router-dom'
+import { useSelector } from 'react-redux' 
 
+
+import { SectionContainer, Container , Row } from '../styleGrid/base'
+import { Col } from '../styleGrid/grid'
 import { FinalResultContainer , FinalResultCard, Header ,
     InfoHeader, ResultButton } from './styles';
 
 export default function FinalResult(){
-        let { category, allRightQuestions, rightEasyQuestions, rightMediumQuestions,
-             rightHardQuestions, wrongEasyQuestions, 
-             wrongMediumQuestions, wrongHardQuestions } = useParams()
-        let arr = []
-             
     
-        if(arr.indexOf(category) === -1){
-            arr.push(category, allRightQuestions,rightEasyQuestions, rightMediumQuestions,rightHardQuestions,
-                wrongEasyQuestions,wrongMediumQuestions, wrongHardQuestions)}
+    let { categoryDoneReturn } = useParams()
+    const testDone = useSelector( state => state.data)
+
+
+
+    const [allCorrectQuestions,setAllCorrectQuestions] = useState()
+    const [correctEasyQuestions,setCorrectEasyQuestions] = useState()
+    const [correctMediumQuestions,setCorrectMediumQuestions] = useState()
+    const [correctHardQuestions,setCorrectHardQuestions] = useState()
+    const [wrongEasyQuestions,setWrongEasyQuestions] = useState()
+    const [wrongMediumQuestions,setWrongMediumQuestions] = useState()
+    const [wrongHardQuestions,setWrongHardQuestions] = useState()
+    
+    
+    
+    useEffect(()=>{
+
+        function loadCategoriesDone() {
+        let counter = 0
+            
+            testDone.forEach(catDone=>{
+                counter = testDone.indexOf(categoryDoneReturn)
+            })
+
+            
+            setAllCorrectQuestions(testDone[counter + 1])
+            setCorrectEasyQuestions(testDone[counter + 2])
+            setCorrectMediumQuestions(testDone[counter + 3])
+            setCorrectHardQuestions(testDone[counter + 4])
+            setWrongEasyQuestions(testDone[counter + 5])
+            setWrongMediumQuestions(testDone[counter + 6])
+            setWrongHardQuestions(testDone[counter + 7])
+
+            
+
+        }
+        loadCategoriesDone()
+    },[])
+
 
     return (<div>
-        <FinalResultContainer className="hide">
+        <FinalResultContainer>
             <Container>
                 <SectionContainer>
                     <Row>
@@ -40,13 +73,13 @@ export default function FinalResult(){
                                 <Row>
                                     <div className="resultDescription1">
                                         <Col de='6'>
-                                            <h1>{allRightQuestions}</h1>
+                                            <h1>{allCorrectQuestions}</h1>
                                             
                                             <p>acertos</p>
                                         </Col>
 
                                         <Col de='6'>
-                                            <h1>{10 - allRightQuestions}</h1>
+                                            <h1>{10 - allCorrectQuestions}</h1>
                                             <p>erros</p>
                                         </Col>
                                     </div>
@@ -56,7 +89,7 @@ export default function FinalResult(){
                                         <Col de='4'>
                                             <Col de='10'>
                                                 <h2>Fácil</h2>
-                                                <p className="resultP">Acertos : {rightEasyQuestions}</p>
+                                                <p className="resultP">Acertos : {correctEasyQuestions}</p>
                                                 <p className="resultP"> Erros: {wrongEasyQuestions}</p>
                                             </Col>
                                             <Col de='2'>
@@ -66,7 +99,7 @@ export default function FinalResult(){
                                         <Col de='4'>
                                             <Col de='10'>
                                                 <h2>Médio</h2>
-                                                <p className="resultP">Acertos : {rightMediumQuestions}</p>
+                                                <p className="resultP">Acertos : {correctMediumQuestions}</p>
                                                 <p className="resultP"> Erros: {wrongMediumQuestions}</p>
                                             </Col>
                                             <Col de='2'>
@@ -75,13 +108,13 @@ export default function FinalResult(){
                                         </Col>
                                         <Col de='4'>
                                             <h2>Difícil</h2>
-                                            <p className="resultP">Acertos : {rightHardQuestions}</p>
+                                            <p className="resultP">Acertos : {correctHardQuestions}</p>
                                             <p className="resultP"> Erros: {wrongHardQuestions}</p>
                                         </Col>
                                     </div>
                                 </Row>
                                 <Row>
-                                    <Link to={`/test/${category}/${allRightQuestions}/${rightEasyQuestions}/${rightMediumQuestions}/${rightHardQuestions}/${wrongEasyQuestions}/${wrongMediumQuestions}/${wrongHardQuestions}/${arr}/home`}>
+                                    <Link to={`/`}>
                                     <ResultButton> Voltar ao início</ResultButton>
                                     </Link>
                                 </Row>

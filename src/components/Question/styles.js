@@ -131,11 +131,12 @@ export const QuestionHeader = styled.header`
             font-family:Roboto, sans-serif;
             margin:30px 5px;
             font-weight: 400;
+            
 
         }
         @media (max-device-width: 479.98px){ 
 
-margin-left: -10px;
+        margin-left: -10px;
 }
 
         
