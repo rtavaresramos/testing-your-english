@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { SectionContainer, Container , Row } from '../styleGrid/base';
 import { Col } from '../styleGrid/grid';
 import MonsterIcon from './monster-icon.png'
-import '../../teste.css'
 import {useParams , Link} from 'react-router-dom'
 
 import { FinalResultContainer , FinalResultCard, Header ,
