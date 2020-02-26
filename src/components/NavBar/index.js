@@ -8,7 +8,7 @@ export default class NavBar extends Component {
     return (
             <Div>
                 <Row>
-                    <Link to="/"><NavBrand>Teste Dev Frontend</NavBrand></Link>
+                    <Link to="/" className="link"><NavBrand>Teste Dev Frontend</NavBrand></Link>
                 </Row>
             </Div>
     )

@@ -9,6 +9,10 @@ export const Div = styled.div`
     background:#343C58;
     overflow-x: hidden;
     overflow-y: hidden;
+    
+    .link{
+        text-decoration: none;
+    }
 
 `
 
