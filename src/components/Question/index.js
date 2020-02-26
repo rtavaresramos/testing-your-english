@@ -157,6 +157,52 @@ function Question(){
             setCurrentQuestion(currentQuestion + 1)
             setCounter(counter + 1)
             iconDifficultyControl()
+
+
+                switch(difficultyControl){
+                    case 2:
+                        setDifficultyControl(0)
+                        switch(difficulty[currentQuestion]){
+                        case "easy": 
+                        
+                            setCurrentQuestion(currentQuestion + question.length/3)
+
+                
+                        break
+                
+                        case "medium":
+                            setCurrentQuestion(currentQuestion + question.length/3)
+
+                
+                        break
+                
+                
+                        default:
+                       }
+                    break
+         
+                    case -2:
+                        setDifficultyControl(0)
+                        switch(difficulty[currentQuestion]){
+                            case "hard": 
+                            setCurrentQuestion(currentQuestion - question.length/3)
+                            
+                            break
+                    
+                            case "medium":
+                                setCurrentQuestion(currentQuestion - question.length/3)
+
+                    
+                            break
+                    
+                    
+                            default:
+                           }
+                     break
+         
+                     default:
+                }
+
         }
         if(questionNumber < 10){
             e = 0
@@ -169,14 +215,8 @@ function Question(){
 //  Here there is a activate control for the button to send the user answer
 
     function btnActityVerifyIn(){
-        
-        var e = 1 
+        setBtnActive("enabled")}
 
-
-        return e , setBtnActive("enabled")}
-
-    function btnActivityVerifyOut(){
-        if(e = 0){setBtnActive("disabled")}}
 
 //  Here, the function verify if the answer from user is correct or not. Also call the function which
 // change or not the question level
@@ -184,14 +224,12 @@ function Question(){
    function answerVerify(){
     
     if(userAnswer == rightAnswer[currentQuestion]){
-        setDifficultyControl(difficultyControl + 1)
     }else{
-        setDifficultyControl(difficultyControl - 1)
     }
-    checkDifficulty()
-
 
     if(userAnswer == rightAnswer[currentQuestion]){
+        setDifficultyControl(difficultyControl + 1)
+
 
         switch(difficulty[currentQuestion]){
             case "easy":
@@ -219,6 +257,8 @@ function Question(){
 
 
     }else{
+        setDifficultyControl(difficultyControl - 1)
+
 
         switch(difficulty[currentQuestion]){
             case "easy":
@@ -254,61 +294,6 @@ function Question(){
 
 //  Here, is the function which check the current difficulty, and the two ones bellow get up or down the
 //  difficulty level from the next question
-
-   function checkDifficulty(){
-       if(counter < 9){
-        switch(difficultyControl){
-            case 1:
-             changeUpDifficulty()
-            break
- 
-            case -1:
-             changeDownDifficulty()
-             break
- 
-             default:
-        }
-       }
-       
-   }
-
-   function changeDownDifficulty(){
-       switch(difficulty[currentQuestion]){
-        case "hard": 
-        setCurrentQuestion(currentQuestion - question.length/3)
-        setDifficultyControl(0)
-        
-        break
-
-        case "medium":
-            setCurrentQuestion(currentQuestion - question.length/3)
-            setDifficultyControl(0)
-
-        break
-
-
-        default:
-       }
-   }
-   function changeUpDifficulty(){
-       switch(difficulty[currentQuestion]){
-        case "easy": 
-        
-            setCurrentQuestion(currentQuestion + question.length/3)
-            setDifficultyControl(0)
-
-        break
-
-        case "medium":
-            setCurrentQuestion(currentQuestion + question.length/3)
-            setDifficultyControl(0)
-
-        break
-
-
-        default:
-       }
-   }
 
    function getCurrentDate(){
     var dNow = new Date();
@@ -445,26 +430,22 @@ function closeModal(){
                             </QuestionHeader>
                             <QuestionAnswer>
                                     <QuestionOption onClick={setOption}className={optionVerify1}onFocus={function(){btnActityVerifyIn()
-                                     setUserAnswer(options[0])}}
-                                    onBlur={btnActivityVerifyOut}>
+                                     setUserAnswer(options[0])}}>
                                         <p>{options[0]}</p>
                                     </QuestionOption>
                                     
                                     <QuestionOption onClick={setOption}className={optionVerify2}onFocus={function(){btnActityVerifyIn()
-                                     setUserAnswer(options[1])}}
-                                    onBlur={btnActivityVerifyOut}>
+                                     setUserAnswer(options[1])}}>
                                         <p>{options[1]}</p>
                                     </QuestionOption>
 
                                     <QuestionOption onClick={setOption}className={optionVerify3}onFocus={function(){btnActityVerifyIn()
-                                    setUserAnswer(options[2])}}
-                                    onBlur={btnActivityVerifyOut}>
+                                    setUserAnswer(options[2])}}>
                                         <p>{options[2]}</p>
                                     </QuestionOption>
 
                                     <QuestionOption onClick={setOption}className={optionVerify4}onFocus={   function(){btnActityVerifyIn()
-                                     setUserAnswer(options[3])}}
-                                    onBlur={btnActivityVerifyOut}>
+                                     setUserAnswer(options[3])}}>
                                         <p>{options[3]}</p>
                                     </QuestionOption>
 
