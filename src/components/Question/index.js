@@ -260,13 +260,10 @@ function Question(){
         switch(difficultyControl){
             case 1:
              changeUpDifficulty()
-            setDifficultyControl(0)
             break
  
             case -1:
              changeDownDifficulty()
-             setDifficultyControl(0)
- 
              break
  
              default:
@@ -278,12 +275,14 @@ function Question(){
    function changeDownDifficulty(){
        switch(difficulty[currentQuestion]){
         case "hard": 
-        setCurrentQuestion(currentQuestion - 10)
+        setCurrentQuestion(currentQuestion - question.length/3)
+        setDifficultyControl(0)
         
         break
 
         case "medium":
-            setCurrentQuestion(currentQuestion - 10)
+            setCurrentQuestion(currentQuestion - question.length/3)
+            setDifficultyControl(0)
 
         break
 
@@ -295,12 +294,14 @@ function Question(){
        switch(difficulty[currentQuestion]){
         case "easy": 
         
-            setCurrentQuestion(currentQuestion + 10)
+            setCurrentQuestion(currentQuestion + question.length/3)
+            setDifficultyControl(0)
 
         break
 
         case "medium":
-            setCurrentQuestion(currentQuestion + 10)
+            setCurrentQuestion(currentQuestion + question.length/3)
+            setDifficultyControl(0)
 
         break
 
