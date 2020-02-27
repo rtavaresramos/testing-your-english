@@ -129,7 +129,7 @@ export const Title = styled.h2`
             padding: 0 0;
             text-align: start;
             margin: 50px 0 5px 5px;
-            font-size: 1.7em;
+            font-size: 2em;
             font-family:Roboto, sans-serif;
             font-weight:500;
 
