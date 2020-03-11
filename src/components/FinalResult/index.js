@@ -115,7 +115,7 @@ export default function FinalResult(){
                                 </Row>
                                 <Row>
                                     <Link to={`/`}>
-                                    <ResultButton>Back to Home Page</ResultButton>
+                                    <ResultButton>Go to Home Page</ResultButton>
                                     </Link>
                                 </Row>
                             </SectionContainer>
