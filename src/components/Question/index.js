@@ -245,12 +245,11 @@ function Question(){
             break;
 
             default:
-                console.log(' resposta correta não foi selecionada')
 
         }
 
         setAllCorrectQuestions(allCorrectQuestions + 1)
-        setModalResultText("Você acertou!")
+        setModalResultText("You're correct!")
         setModalResultColor("#32CB82")
         setModalResultClass("right")
         setModalResultIcon("fas fa-check-circle")
@@ -276,11 +275,10 @@ function Question(){
 
             break;
             default:
-                console.log(' resposta errada não foi selecionada')
 
         }
            
-        setModalResultText("Você errou!")
+        setModalResultText("You're wrong!")
         setModalResultColor("#FF4F4F")
         setModalResultClass("wrong")
         setModalResultIcon("fas fa-times-circle")
@@ -407,7 +405,7 @@ function closeModal(){
                                 <Container>
                                     <Row>
                                         <Col de='6'>
-                                            <h1> {`Questão ${questionNumber}`}</h1>
+                                            <h1> {`Question Number: ${questionNumber}`}</h1>
                                         </Col>
                                         <Col de='6'>
                                             <div className="questionLevel">
@@ -454,7 +452,7 @@ function closeModal(){
                                         }}
                                          className={btnActive}
                                     >
-                                        Responda
+                                        Answer
                                     </AnswerButton>
                         </QuestionAnswer>
                 </QuestionCard>
@@ -476,7 +474,7 @@ function closeModal(){
                     nextQuestion()
                     closeModal()
                     }}>
-                    Avançar
+                    Next
                     <i className="fas fa-arrow-right"></i>
                 </ModalButton>
                 </Link>

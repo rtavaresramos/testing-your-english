@@ -15,7 +15,7 @@ import { HomeContainer, CardSection } from './styles'
                     <Row>
                         <Col de='4'>
                             <h1>
-                                Categorias
+                                Categories
                             </h1>
                         </Col>
                     </Row>
