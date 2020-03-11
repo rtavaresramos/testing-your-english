@@ -326,7 +326,7 @@ function closeModal(){
         localdate:`"${getCurrentDate()}"`, result:`"${detailsVerify()}"`})
       
        if(counter > 8){
-        setModalResultText("Verificar resultado")
+        setModalResultText("Check out your result")
         setModalResultColor("#438DE4")
         setModalResultClass("end")
         setModalResultIcon("fas fa-clipboard-check")

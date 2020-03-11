@@ -60,12 +60,12 @@ export default function FinalResult(){
                             <Header>
                                 <Row>
                                     <img src={MonsterIcon} alt=""/>
-                                    <h1>Parabéns!</h1>
+                                    <h1>Congrats!</h1>
                                     <h2>You finished the test</h2>
                                 </Row>
                                 <Row>
                                     <InfoHeader>
-                                        <h1>Bellow is your final result</h1>
+                                        <h1>Here is your final result</h1>
                                     </InfoHeader>
                                 </Row>
                             </Header>
@@ -115,7 +115,7 @@ export default function FinalResult(){
                                 </Row>
                                 <Row>
                                     <Link to={`/`}>
-                                    <ResultButton> Voltar ao início</ResultButton>
+                                    <ResultButton>Back to Home Page</ResultButton>
                                     </Link>
                                 </Row>
                             </SectionContainer>
