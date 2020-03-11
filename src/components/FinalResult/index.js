@@ -61,11 +61,11 @@ export default function FinalResult(){
                                 <Row>
                                     <img src={MonsterIcon} alt=""/>
                                     <h1>Parabéns!</h1>
-                                    <h2>Você finalizou o teste</h2>
+                                    <h2>You finished the test</h2>
                                 </Row>
                                 <Row>
                                     <InfoHeader>
-                                        <h1>Veja seu desepenho nas questões</h1>
+                                        <h1>Bellow is your final result</h1>
                                     </InfoHeader>
                                 </Row>
                             </Header>
@@ -75,12 +75,12 @@ export default function FinalResult(){
                                         <Col de='6'>
                                             <h1>{allCorrectQuestions}</h1>
                                             
-                                            <p>acertos</p>
+                                            <p>Correct</p>
                                         </Col>
 
                                         <Col de='6'>
                                             <h1>{10 - allCorrectQuestions}</h1>
-                                            <p>erros</p>
+                                            <p>Wrong</p>
                                         </Col>
                                     </div>
                                 </Row>
@@ -88,9 +88,9 @@ export default function FinalResult(){
                                     <div class="resultDescription2">
                                         <Col de='4'>
                                             <Col de='10'>
-                                                <h2>Fácil</h2>
-                                                <p className="resultP">Acertos : {correctEasyQuestions}</p>
-                                                <p className="resultP"> Erros: {wrongEasyQuestions}</p>
+                                                <h2>Easy</h2>
+                                                <p className="resultP">Correct : {correctEasyQuestions}</p>
+                                                <p className="resultP"> Wrong: {wrongEasyQuestions}</p>
                                             </Col>
                                             <Col de='2'>
                                                 <div className="divisor"></div>
@@ -98,18 +98,18 @@ export default function FinalResult(){
                                         </Col>
                                         <Col de='4'>
                                             <Col de='10'>
-                                                <h2>Médio</h2>
-                                                <p className="resultP">Acertos : {correctMediumQuestions}</p>
-                                                <p className="resultP"> Erros: {wrongMediumQuestions}</p>
+                                                <h2>Medium</h2>
+                                                <p className="resultP">Correct : {correctMediumQuestions}</p>
+                                                <p className="resultP"> Wrong: {wrongMediumQuestions}</p>
                                             </Col>
                                             <Col de='2'>
                                                 <div className="divisor"></div>
                                             </Col>
                                         </Col>
                                         <Col de='4'>
-                                            <h2>Difícil</h2>
-                                            <p className="resultP">Acertos : {correctHardQuestions}</p>
-                                            <p className="resultP"> Erros: {wrongHardQuestions}</p>
+                                            <h2>Hard</h2>
+                                            <p className="resultP">Correct : {correctHardQuestions}</p>
+                                            <p className="resultP"> Wrong: {wrongHardQuestions}</p>
                                         </Col>
                                     </div>
                                 </Row>
