@@ -335,10 +335,6 @@ function closeModal(){
         difficulty:`"${difficulty[currentQuestion]}"`, rightAnswer:`"${rightAnswer[currentQuestion]}"`, 
         localdate:`"${getCurrentDate()}"`, result:`"${detailsVerify()}"`})
         
-
-        console.log(`"Os seguintes dados estão sendo mantidos como estado global de type: ANSWER_DETAILS => category:${category}, userAnswer:${userAnswer},difficulty:${difficulty[currentQuestion]}, rightAnswer:${rightAnswer[currentQuestion]}, localdate:${getCurrentDate()}, result:${detailsVerify()}"`)
-
-
         addCategorieDone()
 
         setFinalRoute(`/test/${category}/result`)
