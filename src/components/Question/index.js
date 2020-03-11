@@ -392,7 +392,7 @@ function closeModal(){
                                     <span>
                                     <i className="far fa-times-circle"></i>
                                     </span>
-                                    Fechar
+                                    Close
                                 </Link>
                             </Col>
                         </Row>
