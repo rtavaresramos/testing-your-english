@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const api = axios.create({
 
-     baseURL: 'https://rtavaresramos.github.io/testingyourenglishapi/api.json#'
+     baseURL: './api.json'
 
 })
 
