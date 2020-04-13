@@ -1,0 +1,600 @@
+{
+category: "Science & Nature",
+type: "multiple",
+difficulty: "easy",
+question: "Which Apollo mission was the first one to land on the Moon?",
+correct_answer: "Apollo 11",
+incorrect_answers: [
+"Apollo 10",
+"Apollo 9",
+"Apollo 13"
+]
+},
+{
+category: "Entertainment: Music",
+type: "multiple",
+difficulty: "medium",
+question: "Who is the artist of the recent new album the Uncanny Valley?",
+correct_answer: "Perturbator",
+incorrect_answers: [
+"Carpenter Brut",
+"GOST",
+"Dan Terminus "
+]
+},
+{
+category: "Entertainment: Music",
+type: "multiple",
+difficulty: "medium",
+question: "Who had a US and UK number 1 hit in 1962 with the instrumental, &#039;Telstar&#039;?",
+correct_answer: "The Tornados",
+incorrect_answers: [
+"The Ventures",
+"The Spotnicks",
+"The Tremeloes"
+]
+},
+{
+category: "Geography",
+type: "multiple",
+difficulty: "medium",
+question: "Montreal is in which Canadian province?",
+correct_answer: "Quebec",
+incorrect_answers: [
+"Ontario",
+"Nova Scotia",
+"Alberta"
+]
+},
+{
+category: "Entertainment: Board Games",
+type: "multiple",
+difficulty: "easy",
+question: "How many spaces are there on a standard Monopoly board?",
+correct_answer: "40",
+incorrect_answers: [
+"28",
+"55",
+"36"
+]
+},
+{
+category: "General Knowledge",
+type: "multiple",
+difficulty: "medium",
+question: "What is the defining characteristic of someone who is described as hirsute?",
+correct_answer: "Hairy",
+incorrect_answers: [
+"Rude",
+"Funny",
+"Tall"
+]
+},
+{
+category: "Science: Computers",
+type: "multiple",
+difficulty: "easy",
+question: "What does the &quot;MP&quot; stand for in MP3?",
+correct_answer: "Moving Picture",
+incorrect_answers: [
+"Music Player",
+"Multi Pass",
+"Micro Point"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "easy",
+question: "Which game did NOT get financed via Crowdfunding?",
+correct_answer: "Enter the Gungeon",
+incorrect_answers: [
+"Town of Salem",
+"Undertale",
+"Tower Unite"
+]
+},
+{
+category: "Entertainment: Film",
+type: "multiple",
+difficulty: "medium",
+question: "Which of the following James Bond villains is not affiliated with the SPECTRE organization?",
+correct_answer: "Auric Goldfinger",
+incorrect_answers: [
+"Dr. Julius No",
+"Rosa Klebb",
+"Emilio Largo"
+]
+},
+{
+category: "Entertainment: Film",
+type: "multiple",
+difficulty: "easy",
+question: "This movie contains the quote, &quot;Houston, we have a problem.&quot;",
+correct_answer: "Apollo 13",
+incorrect_answers: [
+"The Right Stuff",
+"Capricorn One",
+"Marooned"
+]
+},
+{
+category: "Science: Computers",
+type: "multiple",
+difficulty: "easy",
+question: "What is the most preferred image format used for logos in the Wikimedia database?",
+correct_answer: ".svg",
+incorrect_answers: [
+".png",
+".jpeg",
+".gif"
+]
+},
+{
+category: "Entertainment: Music",
+type: "multiple",
+difficulty: "easy",
+question: "What is the name of Finnish DJ Darude&#039;s hit single released in October 1999?",
+correct_answer: "Sandstorm",
+incorrect_answers: [
+"Dust Devil",
+"Sirocco",
+"Khamsin"
+]
+},
+{
+category: "Sports",
+type: "multiple",
+difficulty: "easy",
+question: "The Rio 2016 Summer Olympics held it&#039;s closing ceremony on what date?",
+correct_answer: "August 21",
+incorrect_answers: [
+"August 23",
+"August 19",
+"August 17"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "easy",
+question: "What is the title of song on the main menu in Halo?",
+correct_answer: "Halo",
+incorrect_answers: [
+"Opening Suite",
+"Shadows",
+"Suite Autumn"
+]
+},
+{
+category: "Entertainment: Film",
+type: "multiple",
+difficulty: "medium",
+question: "In the 2010 Nightmare on Elm Street reboot, who played Freddy Kruger?",
+correct_answer: "Jackie Earle Haley",
+incorrect_answers: [
+"Tyler Mane",
+"Derek Mears",
+"Gunnar Hansen"
+]
+},
+{
+category: "Science & Nature",
+type: "multiple",
+difficulty: "medium",
+question: "After which Danish city is the 72th element on the periodic table named?",
+correct_answer: "Copenhagen",
+incorrect_answers: [
+"Odense",
+"Herning",
+"Skagen"
+]
+},
+{
+category: "Entertainment: Television",
+type: "multiple",
+difficulty: "hard",
+question: "In &quot;It&#039;s Always Sunny in Philadelphia&quot; what was the name of Frank&#039;s wrestling persona?",
+correct_answer: "The Trash Man",
+incorrect_answers: [
+"Bird of War",
+"Day Man",
+"The Maniac"
+]
+},
+{
+category: "Entertainment: Music",
+type: "multiple",
+difficulty: "medium",
+question: "What is the relationship between the band members of American rock band King of Leon?",
+correct_answer: "Brothers &amp; cousins",
+incorrect_answers: [
+"Childhood friends",
+"Former classmates",
+"Fraternity house members"
+]
+},
+{
+category: "Science & Nature",
+type: "multiple",
+difficulty: "medium",
+question: "The human right lung has how many lobes?",
+correct_answer: "3",
+incorrect_answers: [
+"4",
+"2",
+"1"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "easy",
+question: "In PROTOTYPE 2. who is referred to as &quot;Tango Primary&quot;?",
+correct_answer: "James Heller",
+incorrect_answers: [
+"Alex Mercer",
+"Dana Mercer",
+"Any Goliaths roaming around"
+]
+},
+{
+category: "Celebrities",
+type: "multiple",
+difficulty: "hard",
+question: "How tall is Tom Cruise?",
+correct_answer: "5&prime; 7&Prime;",
+incorrect_answers: [
+"5&prime; 9&Prime;",
+"5&prime; 4&Prime;",
+"5&prime; 5&Prime;"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "medium",
+question: "When was Chapter 1 of the Source Engine mod &quot;Underhell&quot; released?",
+correct_answer: "September 1st, 2013",
+incorrect_answers: [
+"March 3rd, 2011",
+"September 12th, 2013",
+"October 2nd, 2012"
+]
+},
+{
+category: "General Knowledge",
+type: "multiple",
+difficulty: "easy",
+question: "Which one of these is not a typical European sword design?",
+correct_answer: "Scimitar",
+incorrect_answers: [
+"Falchion",
+"Ulfberht",
+"Flamberge"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "hard",
+question: "Which car did not appear in the 2002 Lego Game: Drome Racers?",
+correct_answer: "Wasp",
+incorrect_answers: [
+"Raptor",
+"Hornet",
+"Behemoth"
+]
+},
+{
+category: "Celebrities",
+type: "multiple",
+difficulty: "medium",
+question: "What is generally considered to be William Shakespeare&#039;s birth date?",
+correct_answer: "April 23rd, 1564",
+incorrect_answers: [
+"July 4th, 1409",
+"September 29th, 1699",
+"December 1st, 1750"
+]
+},
+{
+category: "Entertainment: Music",
+type: "multiple",
+difficulty: "medium",
+question: "What is Brian May&#039;s guitar called?",
+correct_answer: "Red Special",
+incorrect_answers: [
+"Blue Special",
+"Green Special",
+"Yellow Special"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "hard",
+question: "In the title of the game &quot;Luigi&#039;s Mansion&quot;, what is the only letter to not appear with a pair of eyes in it?",
+correct_answer: "s",
+incorrect_answers: [
+"n",
+"i",
+"m"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "hard",
+question: "What do the video games No Man&rsquo;s Sky and Mighty No. 9 have in common?",
+correct_answer: "Both were announced in 2013.",
+incorrect_answers: [
+"Both were crowdfunded.",
+"Both were developed by indie studios.",
+"Both were released for the PlayStation 3."
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "easy",
+question: "What year was Super Mario Bros. released?",
+correct_answer: "1985",
+incorrect_answers: [
+"1983",
+"1987",
+"1986"
+]
+},
+{
+category: "Science: Computers",
+type: "multiple",
+difficulty: "hard",
+question: "What internet protocol was documented in RFC 1459?",
+correct_answer: "IRC",
+incorrect_answers: [
+"HTTP",
+"HTTPS",
+"FTP"
+]
+},
+{
+category: "Entertainment: Japanese Anime & Manga",
+type: "multiple",
+difficulty: "medium",
+question: "Krusty is the guild master of which guild in &quot;Log Horizon&quot;?",
+correct_answer: "D. D. D",
+incorrect_answers: [
+"Silver Sword",
+"West Wind Brigade",
+"Oceanic Systems (Marine Agency)"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "medium",
+question: "In &quot;Overwatch&quot;, how much health does Roadhog&#039;s &quot;Take a Breather&quot; ability recover?",
+correct_answer: "300",
+incorrect_answers: [
+"100",
+"200",
+"400"
+]
+},
+{
+category: "Animals",
+type: "multiple",
+difficulty: "hard",
+question: "Which species is a &quot;mountain chicken&quot;?",
+correct_answer: "Frog",
+incorrect_answers: [
+"Chicken",
+"Horse",
+"Fly"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "hard",
+question: "In the &quot;Devil May Cry&quot; franchise, which game is chronologically first?",
+correct_answer: "Devil May Cry 3: Dante&#039;s Awakening ",
+incorrect_answers: [
+"Devil May Cry 4",
+"Devil May Cry",
+"Devil May Cry 2"
+]
+},
+{
+category: "History",
+type: "multiple",
+difficulty: "easy",
+question: "These two countries held a commonwealth from the 16th to 18th century.",
+correct_answer: "Poland and Lithuania",
+incorrect_answers: [
+"Hutu and Rwanda",
+"North Korea and South Korea",
+"Bangladesh and Bhutan"
+]
+},
+{
+category: "General Knowledge",
+type: "multiple",
+difficulty: "medium",
+question: "Apple co-founder Steve Jobs died from complications of which form of cancer?",
+correct_answer: "Pancreatic",
+incorrect_answers: [
+"Bone",
+"Liver",
+"Stomach"
+]
+},
+{
+category: "Entertainment: Film",
+type: "multiple",
+difficulty: "medium",
+question: "Which actor plays the character &quot;Tommy Jarvis&quot; in &quot;Friday the 13th: The Final Chapter&quot; (1984)?",
+correct_answer: "Corey Feldman",
+incorrect_answers: [
+"Macaulay Culkin",
+"Mel Gibson",
+"Mark Hamill"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "medium",
+question: "What is the subtitle for Gran Turismo 3?",
+correct_answer: "A-Spec",
+incorrect_answers: [
+"Championship",
+"Drive",
+"Nitro"
+]
+},
+{
+category: "Entertainment: Television",
+type: "multiple",
+difficulty: "easy",
+question: "The HBO series &quot;Game of Thrones&quot; is based on which series of books?",
+correct_answer: "A Song of Ice and Fire",
+incorrect_answers: [
+"The Wheel of Time",
+"Harry Potter",
+"The Notebook"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "hard",
+question: "What is the name of the alien species introduced in Shadow the Hedgehog (2005)?",
+correct_answer: "Black Arms",
+incorrect_answers: [
+"The Swarm",
+"Black Hive",
+"The Eclipse"
+]
+},
+{
+category: "Geography",
+type: "multiple",
+difficulty: "medium",
+question: "What is the capital of Greenland?",
+correct_answer: "Nuuk",
+incorrect_answers: [
+"Sisimiut",
+"Narsaq",
+"Maniitsoq"
+]
+},
+{
+category: "Science & Nature",
+type: "multiple",
+difficulty: "hard",
+question: "What physics principle relates the net electric flux out of a closed surface to the charge enclosed by that surface?",
+correct_answer: "Gauss&#039;s Law",
+incorrect_answers: [
+"Faraday&#039;s Law",
+"Ampere&#039;s Law",
+"Biot-Savart Law"
+]
+},
+{
+category: "Science & Nature",
+type: "multiple",
+difficulty: "easy",
+question: "What is the official name of the star located closest to the North Celestial Pole?",
+correct_answer: "Polaris",
+incorrect_answers: [
+"Eridanus",
+"Gamma Cephei",
+"Iota Cephei"
+]
+},
+{
+category: "Entertainment: Cartoon & Animations",
+type: "multiple",
+difficulty: "medium",
+question: "What ability does Princess Sofia the First have from her amulet that allows her to breathe underwater?",
+correct_answer: "Mermaid Transformation",
+incorrect_answers: [
+"Artificial Gills",
+"Bubble Head",
+"Bubble Shield"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "medium",
+question: "Which of these roles in Town of Salem is mafia?",
+correct_answer: "Disguiser",
+incorrect_answers: [
+"Escort",
+"Lookout",
+"Transporter"
+]
+},
+{
+category: "Entertainment: Video Games",
+type: "multiple",
+difficulty: "easy",
+question: "In &quot;Pheonix Wright: Ace Attorney&quot; which character is the District Chief of Police?",
+correct_answer: "Damon Gant",
+incorrect_answers: [
+"Miles Edgeworth",
+"Lana Skye",
+"Mike Meekins"
+]
+},
+{
+category: "Science & Nature",
+type: "multiple",
+difficulty: "medium",
+question: "What is the Linnean name of the domestic apple tree?",
+correct_answer: "Malus pumila",
+incorrect_answers: [
+"Malus americana",
+"Pomus domestica",
+"Appelus delectica"
+]
+},
+{
+category: "General Knowledge",
+type: "multiple",
+difficulty: "hard",
+question: "The word &quot;abulia&quot; means which of the following?",
+correct_answer: "The inability to make decisions",
+incorrect_answers: [
+"The inability to stand up",
+"The inability to concentrate on anything",
+"A feverish desire to rip one&#039;s clothes off"
+]
+},
+{
+category: "Geography",
+type: "multiple",
+difficulty: "medium",
+question: "What mountain range lines the border between Spain and France?",
+correct_answer: "Pyrenees",
+incorrect_answers: [
+"Alps",
+"Carpathians",
+"Urals"
+]
+},
+{
+category: "Entertainment: Japanese Anime & Manga",
+type: "multiple",
+difficulty: "hard",
+question: "Who was the Author of the manga Monster Hunter Orage?",
+correct_answer: " Hiro Mashima",
+incorrect_answers: [
+"Shin Yamamoto",
+"Keiichi Hikami",
+"Hirohiko Araki"
+]
+}
