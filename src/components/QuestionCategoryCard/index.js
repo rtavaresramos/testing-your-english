@@ -16,7 +16,7 @@ export default function QuestionCategoryCard() {
     useEffect(() => {
         async function loadCategories() {
             const response = await api.get()
-            const data = await response.data
+            const data = await response.data.results
             let categories = []
 
             data.forEach( question => {

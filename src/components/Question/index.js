@@ -74,7 +74,7 @@ function Question(){
     useEffect(() => {
         async function loadQuestions() {
             const response = await api.get()
-            const data = response.data
+            const data = response.data.results
             let allQuestions = []
             let allRightAnswer = []
             let allAnswers = []
@@ -85,9 +85,11 @@ function Question(){
                 return question.category === category
               })
                 categoryQuestions.forEach(question=>{
-                if(!allQuestions.includes(question.question)){allQuestions.push(question.question)}
+                // if(!allQuestions.includes(question.question)){allQuestions.push(question.question)}
+                allQuestions.push(question.question)
 
                 if(!allRightAnswer.includes(question.question)){allRightAnswer.push( question.correct_answer)}
+                allRightAnswer.push( question.correct_answer)
                     allAnswers.push(question.correct_answer)
                     allAnswers.push(question.incorrect_answers[counter ])
                     allAnswers.push(question.incorrect_answers[counter  + 1])
@@ -100,6 +102,8 @@ function Question(){
             setRightAnswer(allRightAnswer)
             setDifficulty(allDifficulty)
             setAllAnswers(allAnswers)
+
+            console.log(allQuestions)
             
             
         }
